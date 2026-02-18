@@ -8,11 +8,11 @@ import { useEffect, useRef, useState } from "react";
 
 // CDN image URLs
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/YCDdxWLbLqRVUTYr.png";
-const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/PRVvWYrjnOjoRmQZ.jpg";
-const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/hSmzpAWnnVPaudGn.jpg";
+const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/VcDUZGFSJKjpXRVg.jpg";
+const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/pORvxgXCjTPrOwJn.jpg";
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
-const LEWAND_IMG = "https://www.lewandmassager.com/media/catalog/product/cache-webp/12c7fc2d1ade4ecde11c635020708fe1/l/e/le-wand-petite-rechargeable-vibrating-massager-rose-gold-lifestyle_1.webp";
-const DAME_IMG = "https://dame.com/cdn/shop/files/PDPImages_Com_PW_01_6309906e-f1d7-443d-85e9-771fbc3069ab.png?v=1758536746&width=800";
+const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
+const DAME_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/FVVKKiSUwqhUvitY.webp";
 const LOLLY_VERDICT_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=400";
 
 // Author SVG avatar component
