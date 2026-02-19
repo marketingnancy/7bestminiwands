@@ -15,31 +15,12 @@ const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 const DAME_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/FVVKKiSUwqhUvitY.webp";
 const LOLLY_VERDICT_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=400";
 
-// Author SVG avatar component
-function AuthorAvatar({ idPrefix = "" }: { idPrefix?: string }) {
+const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/AhVphAfTJpLeUnVh.jpg";
+
+// Author photo component
+function AuthorAvatar() {
   return (
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id={`${idPrefix}bg`} x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style={{stopColor:'#f8d4cf'}}/><stop offset="100%" style={{stopColor:'#d4a09a'}}/></linearGradient>
-        <linearGradient id={`${idPrefix}hair`} x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style={{stopColor:'#3d2b1f'}}/><stop offset="100%" style={{stopColor:'#5a3d2b'}}/></linearGradient>
-        <linearGradient id={`${idPrefix}skin`} x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style={{stopColor:'#f5c6a8'}}/><stop offset="100%" style={{stopColor:'#e8b090'}}/></linearGradient>
-      </defs>
-      <circle cx="100" cy="100" r="100" fill={`url(#${idPrefix}bg)`}/>
-      <ellipse cx="100" cy="82" rx="55" ry="58" fill={`url(#${idPrefix}hair)`}/>
-      <ellipse cx="100" cy="95" rx="40" ry="44" fill={`url(#${idPrefix}skin)`}/>
-      <path d="M58 78 C58 55, 80 42, 100 42 C120 42, 142 55, 142 78 C142 72, 135 58, 120 54 C112 52, 100 56, 100 56 C100 56, 88 52, 80 54 C65 58, 58 72, 58 78 Z" fill={`url(#${idPrefix}hair)`}/>
-      <path d="M56 82 C50 95, 48 120, 52 140 C48 130, 46 105, 56 82 Z" fill={`url(#${idPrefix}hair)`} opacity="0.9"/>
-      <path d="M144 82 C150 95, 152 120, 148 140 C152 130, 154 105, 144 82 Z" fill={`url(#${idPrefix}hair)`} opacity="0.9"/>
-      <ellipse cx="84" cy="96" rx="4.5" ry="5" fill="#2d1f14"/><ellipse cx="116" cy="96" rx="4.5" ry="5" fill="#2d1f14"/>
-      <circle cx="82.5" cy="94.5" r="1.5" fill="white" opacity="0.7"/><circle cx="114.5" cy="94.5" r="1.5" fill="white" opacity="0.7"/>
-      <path d="M74 87 C78 83, 88 83, 92 86" stroke="#3d2b1f" strokeWidth="2" fill="none" strokeLinecap="round"/>
-      <path d="M108 86 C112 83, 122 83, 126 87" stroke="#3d2b1f" strokeWidth="2" fill="none" strokeLinecap="round"/>
-      <path d="M98 100 C98 106, 100 110, 102 110 C104 110, 104 108, 102 106" stroke="#d4a08a" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-      <path d="M87 116 C92 124, 108 124, 113 116" stroke="#c47a6e" strokeWidth="2.2" fill="none" strokeLinecap="round"/>
-      <ellipse cx="100" cy="118" rx="10" ry="4" fill="#d4796e" opacity="0.4"/>
-      <path d="M60 170 C60 150, 75 140, 100 140 C125 140, 140 150, 140 170 L140 200 L60 200 Z" fill="#E8857A" opacity="0.8"/>
-      <path d="M88 140 C92 148, 108 148, 112 140" stroke="#d4796e" strokeWidth="1" fill="none"/>
-    </svg>
+    <img src={AUTHOR_IMG} alt="Mia Sinclair" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
   );
 }
 
@@ -122,7 +103,7 @@ export default function Home() {
         <p className="hero-subtitle">I tested over 20 mini wands across every price point so you don't have to. One of them genuinely made me call in sick to work. Here are the only 5 worth your money in 2026.</p>
         <div className="hero-meta">
           <div className="author-avatar">
-            <AuthorAvatar idPrefix="av1-" />
+            <AuthorAvatar />
           </div>
           <div className="author-info">
             <div className="author-name">Mia Sinclair</div>
@@ -533,7 +514,7 @@ export default function Home() {
         {/* AUTHOR BIO */}
         <div className="author-bio">
           <div className="author-bio-avatar">
-            <AuthorAvatar idPrefix="av2-" />
+            <AuthorAvatar />
           </div>
           <div>
             <div className="author-bio-name">Written by Mia Sinclair</div>
