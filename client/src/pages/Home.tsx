@@ -13,7 +13,7 @@ const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
 const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
 const DAME_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/FVVKKiSUwqhUvitY.webp";
-const LOLLY_VERDICT_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=400";
+const LOLLY_VERDICT_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
 
 const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/AhVphAfTJpLeUnVh.jpg";
 
