@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 // CDN image URLs
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/YCDdxWLbLqRVUTYr.png";
-const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/VcDUZGFSJKjpXRVg.jpg";
+const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/WYEnKGNBWydsUsVR.png";
 const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/pORvxgXCjTPrOwJn.jpg";
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
 const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
@@ -305,11 +305,11 @@ export default function Home() {
                 <span className="rating-stars">★★★★☆</span>
                 <span className="rating-score">8.2/10</span>
               </div>
-              <div className="product-price">$35</div>
+              <div className="product-price">$82</div>
             </div>
             <div className="product-body">
-              <p>The Shibari Mini Halo has been an internet darling for years, and I totally get why. At around $35, it delivers surprisingly decent vibrations and it's available basically everywhere. It's the Toyota Corolla of mini wands: reliable, gets you where you need to go, won't exactly make your heart race.</p>
-              <p>The catch is the vibration quality. It's distinctly <strong>buzzy</strong> rather than rumbly. That surface-level tingling sensation that cheaper motors produce. It works, sure, but after using Lolly's deeper vibrations, going back to the Shibari feels like comparing the massage chairs at the airport to an actual spa. It's also louder than you'd expect, the battery gives up after about an hour, and the silicone doesn't feel as nice against your skin. For $35, it's a fine starting point. But fair warning: most people I know who started with this ended up buying something better within a few months anyway. So you kind of end up spending more in the long run.</p>
+              <p>The Shibari Mini Halo has been an internet darling for years, and I totally get why. At around $82, it delivers surprisingly decent vibrations and it's available basically everywhere. It's the Toyota Corolla of mini wands: reliable, gets you where you need to go, won't exactly make your heart race.</p>
+              <p>The catch is the vibration quality. It's distinctly <strong>buzzy</strong> rather than rumbly. That surface-level tingling sensation that cheaper motors produce. It works, sure, but after using Lolly's deeper vibrations, going back to the Shibari feels like comparing the massage chairs at the airport to an actual spa. It's also louder than you'd expect, the battery gives up after about an hour, and the silicone doesn't feel as nice against your skin. For $82, it's a questionable value. But fair warning: most people I know who started with this ended up buying something better within a few months anyway. So you kind of end up spending more in the long run.</p>
 
               <h4>Highlights:</h4>
               <ul className="pros">
@@ -328,7 +328,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.shibarisextoys.com/" className="cta-btn secondary" target="_blank" rel="noopener">View Shibari Mini Halo →</a>
+                <a href="https://www.easytoys.nl/shibari-mini-halo-zwart-p-35766/" className="cta-btn secondary" target="_blank" rel="noopener">View Shibari Mini Halo →</a>
               </div>
             </div>
           </div>
@@ -396,7 +396,7 @@ export default function Home() {
                   <td className="col-lolly"><strong style={{fontSize:'16px',color:'var(--accent-dark)'}}>$69</strong></td>
                   <td>$145</td>
                   <td>$119</td>
-                  <td>$35</td>
+                  <td>$82</td>
                   <td>$30</td>
                 </tr>
                 <tr>
