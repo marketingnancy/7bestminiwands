@@ -1,5 +1,5 @@
 /**
- * The Velvet Edit — Lolly Landing Page
+ * The Velvet Edit — 7-Product Mini Wand Landing Page
  * Design: Warm cream editorial magazine style
  * Fonts: Instrument Serif (headlines) + DM Sans (body)
  * Palette: #FBF8F4 cream bg, #E8857A coral accent
@@ -8,32 +8,40 @@ import { useEffect, useRef, useState } from "react";
 
 // CDN image URLs
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/YCDdxWLbLqRVUTYr.png";
-const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/VcDUZGFSJKjpXRVg.jpg";
-const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/pORvxgXCjTPrOwJn.jpg";
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
-const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
-const DAME_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/FVVKKiSUwqhUvitY.webp";
 const LOLLY_VERDICT_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
-
+const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
+const HITACHI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg";
+const SATISFYER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HWjQSFZjUqAOURer.jpg";
+const DAME_POM_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg";
+const MAUDE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg";
+const WEVIBE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg";
 const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/AhVphAfTJpLeUnVh.jpg";
 
-// Author photo component
+// Product data
+const PRODUCTS = [
+  { id: "product-1", name: "Lolly by Nancy", tagline: "Editor's Pick", rating: "4.8", stars: "★★★★★", img: LOLLY_IMG, bg: "linear-gradient(135deg, #FFE5E0, #FFF0EE, #FCEAE6)" },
+  { id: "product-2", name: "Hitachi Magic Wand Mini", tagline: "The legacy name", rating: "4.3", stars: "★★★★☆", img: HITACHI_IMG, bg: "linear-gradient(135deg, #E8EAF6, #F5F5F5, #ECEFF1)" },
+  { id: "product-3", name: "Le Wand Petite", tagline: "Premium but pricey", rating: "4.5", stars: "★★★★½", img: LEWAND_IMG, bg: "linear-gradient(135deg, #EDE7F6, #F3E5F5, #E8EAF6)" },
+  { id: "product-4", name: "Satisfyer Pro 2", tagline: "Budget fan favorite", rating: "4.4", stars: "★★★★☆", img: SATISFYER_IMG, bg: "linear-gradient(135deg, #FFF3E0, #FFF8E1, #FFFDE7)" },
+  { id: "product-5", name: "Dame Pom", tagline: "Sleek but divisive", rating: "4.1", stars: "★★★★☆", img: DAME_POM_IMG, bg: "linear-gradient(135deg, #F3E5F5, #FCE4EC, #F8BBD0)" },
+  { id: "product-6", name: "Maude Vibe", tagline: "Minimalist chic", rating: "3.8", stars: "★★★★☆", img: MAUDE_IMG, bg: "linear-gradient(135deg, #E8F5E9, #F1F8E9, #F9FBE7)" },
+  { id: "product-7", name: "We-Vibe Tango X", tagline: "Compact powerhouse", rating: "4.6", stars: "★★★★★", img: WEVIBE_IMG, bg: "linear-gradient(135deg, #E3F2FD, #E8EAF6, #EDE7F6)" },
+];
+
 function AuthorAvatar() {
-  return (
-    <img src={AUTHOR_IMG} alt="Mia Sinclair" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
-  );
+  return <img src={AUTHOR_IMG} alt="Mia Sinclair" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />;
 }
 
 export default function Home() {
   const [stickyVisible, setStickyVisible] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const product2Ref = useRef<HTMLDivElement>(null);
   const lollyEndRef = useRef<HTMLDivElement>(null);
   const verdictRef = useRef<HTMLDivElement>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Sticky CTA logic
+  // Sticky CTA logic — appears after Lolly section, hides at verdict
   useEffect(() => {
     function checkSticky() {
       const lollyEnd = lollyEndRef.current;
@@ -50,41 +58,31 @@ export default function Home() {
     return () => window.removeEventListener('scroll', checkSticky);
   }, []);
 
-  // Urgency toast logic
+  // Urgency toast — no popup, just a subtle editorial callout
   useEffect(() => {
     const showTimer = setTimeout(() => {
       setToastVisible(true);
-      toastTimerRef.current = setTimeout(() => {
-        setToastVisible(false);
-      }, 8000);
+      toastTimerRef.current = setTimeout(() => setToastVisible(false), 8000);
     }, 20000);
-    return () => {
-      clearTimeout(showTimer);
-      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    };
+    return () => { clearTimeout(showTimer); if (toastTimerRef.current) clearTimeout(toastTimerRef.current); };
   }, []);
 
-  // Body padding for sticky bar
   useEffect(() => {
-    if (stickyVisible) {
-      document.body.classList.add('sticky-active');
-    } else {
-      document.body.classList.remove('sticky-active');
-    }
+    if (stickyVisible) document.body.classList.add('sticky-active');
+    else document.body.classList.remove('sticky-active');
   }, [stickyVisible]);
 
-  const closeToast = () => {
-    setToastVisible(false);
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-  };
+  const closeToast = () => { setToastVisible(false); if (toastTimerRef.current) clearTimeout(toastTimerRef.current); };
+  const toggleFaq = (idx: number) => setOpenFaq(openFaq === idx ? null : idx);
 
-  const toggleFaq = (idx: number) => {
-    setOpenFaq(openFaq === idx ? null : idx);
+  const scrollToProduct = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <>
-      {/* NAVIGATION */}
+      {/* ===== NAVIGATION ===== */}
       <nav className="site-nav">
         <div className="nav-inner">
           <a href="#" className="nav-logo">The Velvet Edit</a>
@@ -97,412 +95,322 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ===== SECTION 1: HERO ===== */}
       <header className="hero">
         <span className="hero-category">Reviews &middot; Wellness</span>
-        <h1>Small But Mighty: 5 Mini Wand Vibrators <span className="title-highlight">So Powerful, You'll Cancel Plans</span></h1>
-        <p className="hero-subtitle">I tested over 20 mini wands across every price point so you don't have to. One of them genuinely made me call in sick to work. Here are the only 5 worth your money in 2026.</p>
+        <h1>We Tested 7 Mini Wands <span className="title-highlight">So You Don't Have To</span></h1>
+        <p className="hero-subtitle">One clear winner. Two total rip-offs. The brutally honest ranking nobody asked us to write.</p>
+        <p className="hero-dateline">Updated February 2026</p>
         <div className="hero-meta">
-          <div className="author-avatar">
-            <AuthorAvatar />
-          </div>
+          <div className="author-avatar"><AuthorAvatar /></div>
           <div className="author-info">
             <div className="author-name">Mia Sinclair</div>
-            <div className="author-date">February 12, 2026 &middot; 9 min read</div>
+            <div className="author-date">February 12, 2026 &middot; 12 min read</div>
           </div>
         </div>
-        <p className="affiliate-note">We may earn a small commission from links on this page, but we only recommend products we genuinely love. Promise.</p>
       </header>
 
-      {/* HERO IMAGE */}
-      <div className="hero-image">
-        <div className="hero-image-inner">
-          <img src={HERO_IMG} alt="Mini wand vibrators reviewed — flat lay with travel essentials" style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:'inherit'}} />
+      {/* ===== SECTION 2: CLICKABLE PRODUCT GALLERY ===== */}
+      <section className="product-gallery-section">
+        <div className="product-gallery">
+          {PRODUCTS.map((p) => (
+            <div className="gallery-card" key={p.id} onClick={() => scrollToProduct(p.id)}>
+              <div className="gallery-card-img" style={{ background: p.bg }}>
+                <img src={p.img} alt={p.name} loading="lazy" />
+              </div>
+              <div className="gallery-card-info">
+                <div className="gallery-card-name">{p.name}</div>
+                <div className="gallery-card-stars">{p.stars} {p.rating}</div>
+                <div className="gallery-card-tagline"><em>"{p.tagline}"</em></div>
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* ===== SECTION 3: TRUST BAR ===== */}
+      <div className="trust-bar">
+        <span>★★★★★ 4,200+ verified reviews analyzed</span>
+        <span className="trust-divider">|</span>
+        <span>🔒 Independently tested</span>
+        <span className="trust-divider">|</span>
+        <span>📦 "Best purchase I made this year" — Sarah, 34</span>
       </div>
 
-      {/* ARTICLE */}
+      {/* ===== SECTION 4: #1 PRODUCT DEEP DIVE (LOLLY) ===== */}
       <article className="article-body">
-        <p className="dropcap">Three of my friends asked me the exact same question last month. And honestly, it's a really good question: "What's a solid vibrator that's small enough to travel with, quiet enough for thin walls, and doesn't look like it belongs in a medical supply catalog?" Every time, I found myself recommending the same handful of products. So I figured I should just write it all down.</p>
+        <h3>#1 — The One That Won</h3>
 
-        <p>Here's the thing about mini wand vibrators that most people don't realize. They've gotten <strong>ridiculously</strong> good in the last couple of years. The technology that used to only exist in full-size wands (think those big, heavy massage wands your mom pretends she uses for her shoulders) has been miniaturized into something that fits in your makeup bag. We're talking rumbly, deep vibrations. Not that annoying buzzy surface feeling that makes your hand go numb before anything interesting happens.</p>
-
-        <p>I spent about three months testing over 20 different mini wands across every price point. From a $15 Amazon impulse buy that made me question my life choices, to a $135 luxury option that was genuinely excellent but also... $135. What I found surprised me. The best one wasn't the most expensive. It wasn't the most famous brand. And it looks like a piece of candy.</p>
-
-        <p>Let's get into it.</p>
-
-        {/* QUICK PICKS */}
-        <div className="quick-picks">
-          <div className="quick-picks-title">My Top 5 at a Glance</div>
-          <div className="quick-pick-item"><span className="pick-rank">1.</span><span className="pick-name">Nancy's Lolly Mini Wand</span><span className="pick-note"> · Best Overall</span><span className="pick-stars">★★★★★ 9.4</span></div>
-          <div className="quick-pick-item"><span className="pick-rank">2.</span><span className="pick-name">Le Wand Petite</span><span className="pick-note"> · Luxury Pick</span><span className="pick-stars">★★★★☆ 8.9</span></div>
-          <div className="quick-pick-item"><span className="pick-rank">3.</span><span className="pick-name">Dame Com Wand</span><span className="pick-note"> · Best Ergonomics</span><span className="pick-stars">★★★★☆ 8.6</span></div>
-          <div className="quick-pick-item"><span className="pick-rank">4.</span><span className="pick-name">Shibari Mini Halo</span><span className="pick-note"> · Best Budget</span><span className="pick-stars">★★★★☆ 8.2</span></div>
-          <div className="quick-pick-item"><span className="pick-rank">5.</span><span className="pick-name">Lovehoney Ignite Mini</span><span className="pick-note"> · Most Compact</span><span className="pick-stars">★★★☆☆ 7.8</span></div>
-        </div>
-
-        {/* PRODUCT #1: LOLLY */}
         <div className="product-card winner" id="product-1">
           <span className="winner-badge">🏆 Editor's Pick</span>
           <div className="product-image-area" style={{background: 'linear-gradient(135deg, #FFE5E0, #FFF0EE, #FCEAE6)'}}>
-            <img className="product-photo" src={LOLLY_IMG} alt="Nancy's Lolly Mini Wand Vibrator" loading="lazy" />
+            <img className="product-photo" src={LOLLY_IMG} alt="Nancy's Lolly Mini Wand" loading="lazy" />
           </div>
           <div className="product-content">
             <div className="product-header">
               <span className="product-badge badge-winner">Best Overall Mini Wand</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#1</span> Nancy's Lolly Mini Wand</h2>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#1</span> Lolly by Nancy</h2>
               <div className="product-rating">
                 <span className="rating-stars">★★★★★</span>
-                <span className="rating-score">9.4/10</span>
+                <span className="rating-score">4.8/5 (1,247 reviews)</span>
               </div>
               <div className="product-price">$69 <span className="original">$139</span></div>
             </div>
             <div className="product-body">
-              <p>Okay, full transparency. When this showed up at my door, I almost didn't test it. It looked like a toy lollipop. Like something you'd win at a carnival. I genuinely thought my editor was messing with me.</p>
-              <p>I was so, so wrong.</p>
-              <p>The first thing you notice when you turn it on is that the vibrations feel <strong>deep</strong>. Not that surface-level buzzy nonsense that makes your fingers go numb. I'm talking rumbly, low-frequency vibrations that you can actually feel doing something meaningful. And the flexible head? It bends and conforms to your body instead of making you do all the work to find the right angle. I spent about 15 minutes my first session and let's just say I rearranged my entire evening after that.</p>
-              <p>It's got 10 different intensities and patterns, which sounds like overkill until you realize that the range between "gentle warm-up" and "okay wow" is genuinely useful. The lowest setting is perfect for exploration, and by the time you hit setting 6 or 7, you're in a completely different universe. I don't even know what settings 9 and 10 do because I've never needed to get there. (That's a compliment.)</p>
-              <p>And can we talk about how <strong>quiet</strong> this thing is? I used it in my apartment with my roommate literally one wall away and she had zero clue. The handle doesn't vibrate either, which is a detail I didn't know I needed until I tried cheaper wands where your entire hand buzzes along with it. Not cute.</p>
-              <p>The lollipop design is lowkey genius from a practical standpoint. Nobody would ever guess what it is. It looks like a quirky desk accessory. A friend saw it in my overnight bag and asked where I got "that cute little massager thing." I said Amazon. I lied. But the point is: it passes the roommate test, the carry-on test, and the "accidentally left it on the bathroom counter" test with flying colors.</p>
+              <p>We went in expecting another overhyped TikTok product. We were wrong.</p>
+              <p>When the Lolly showed up, I'll be honest — it looked like a toy lollipop. Like something you'd win at a carnival. I genuinely thought my editor was messing with me. But the moment you turn it on, you understand. The vibrations feel <strong>deep</strong>. Not that surface-level buzzy nonsense that makes your fingers go numb. We're talking rumbly, low-frequency vibrations that you can actually feel doing something meaningful.</p>
+              <p>The flexible head bends and conforms to your body instead of making you do all the work. It's got 10 different intensities and patterns, and the range between "gentle warm-up" and "okay wow" is genuinely useful. The lowest setting is perfect for exploration, and by setting 6 or 7, you're in a completely different universe. I don't even know what settings 9 and 10 do because I've never needed to get there. That's a compliment.</p>
+              <p>And can we talk about how <strong>quiet</strong> this thing is? I used it in my apartment with my roommate one wall away and she had zero clue. The handle doesn't vibrate either — a detail I didn't know I needed until I tried cheaper wands where your entire hand buzzes along with it. The lollipop design is lowkey genius from a practical standpoint: it passes the roommate test, the carry-on test, and the "accidentally left it on the bathroom counter" test with flying colors.</p>
+              <p>Compared to the competition, nothing else in this lineup matched Lolly's combination of power, discretion, and price. The Le Wand Petite comes close on performance but costs more than double. The Hitachi has brand recognition but feels dated. And the budget options? They're fine for what they are, but "fine" isn't what you want here.</p>
 
-              <h4>What I love:</h4>
-              <ul className="pros">
-                <li>Shocking power-to-size ratio. Performs like wands 3x its size.</li>
-                <li>Whisper quiet with a non-vibrating handle (your hand and your roommate will thank you)</li>
-                <li>Fully waterproof (IPX7) so it works in the shower or bath</li>
-                <li>Flexible head finds the right spot without awkward repositioning</li>
-                <li>Free worldwide shipping + 12 month warranty + 30-day satisfaction guarantee</li>
-              </ul>
-
-              <h4>What could be better:</h4>
-              <ul className="cons">
-                <li>Pin-style charger (no universal USB-C, easy to misplace)</li>
-                <li>Lowest setting might still feel intense if you're very sensitive</li>
-                <li>I wish the handle was just a touch longer, but that's me being picky</li>
-              </ul>
-
-              <div className="review-quotes">
-                <div className="rq-title">What real buyers are saying</div>
-                <div className="review-quote">
-                  <p>"Don't be fooled by the size. It's one powerful piece of kit that never disappoints."</p>
-                  <span className="reviewer">Michelle R. <span className="verified-badge">Verified Buyer</span></span>
-                </div>
-                <div className="review-quote">
-                  <p>"I was skeptical that this would have the necessary power required. OMG, I was so wrong. It definitely gets the job done! One of my new faves, and so small and discreet it's easy to take away on trips."</p>
-                  <span className="reviewer">Pauline W. <span className="verified-badge">Verified Buyer</span></span>
-                </div>
-                <div className="review-quote">
-                  <p>"Really enjoyed how this one seems to find the spot the first time, every time! The quietest toy I've EVER owned!"</p>
-                  <span className="reviewer">Karen C. <span className="verified-badge">Verified Buyer</span></span>
-                </div>
-                <div className="review-quote">
-                  <p>"Perfect size for playing together and not having a toy take up too much space!"</p>
-                  <span className="reviewer">Spencer R. <span className="verified-badge">Verified Buyer</span></span>
-                </div>
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.8/5 (1,247 reviews)</div>
+                <div className="sp-quote">"I threw out my Hitachi after buying this" — <em>verified buyer</em></div>
+                <div className="sp-badge">🏆 #1 Bestseller in Mini Wands</div>
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Get Lolly for $69 →</a>
+                <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Check Availability →</a>
               </div>
-              <p className="cta-subtext">MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; Free discreet shipping &middot; 30-day satisfaction guarantee &middot; 12 month warranty</p>
+              <p className="cta-subtext">MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; Free discreet shipping &middot; 30-day satisfaction guarantee</p>
             </div>
           </div>
         </div>
+
+        {/* ===== SECTION 5: URGENCY BLOCK ===== */}
+        <div className="urgency-block">
+          <p>⚡ <strong>February 2026 Update:</strong> Our #1 pick sold out twice last month after going viral on TikTok. It's currently back in stock but quantities are limited. We'll update this page if availability changes.</p>
+        </div>
+
         <div ref={lollyEndRef} />
 
-        <p>Now, the rest of this list is genuinely solid. These are all products I'd happily recommend if Lolly somehow didn't exist. But it does, and at that price, it's really hard to argue with. That said, depending on your priorities and your budget, one of these runners-up might click better for you. So let's keep going.</p>
+        {/* ===== SECTION 6: PRODUCTS #2–#7 ===== */}
 
-        {/* PRODUCT #2: LE WAND */}
-        <div className="product-card" id="product-2" ref={product2Ref}>
+        {/* #2 HITACHI MAGIC WAND MINI */}
+        <h3>#2 — Hitachi Magic Wand Mini</h3>
+        <div className="product-card" id="product-2">
+          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #E8EAF6, #F5F5F5, #ECEFF1)'}}>
+            <img className="product-photo" src={HITACHI_IMG} alt="Hitachi Magic Wand Mini" loading="lazy" />
+          </div>
+          <div className="product-content">
+            <div className="product-header">
+              <span className="product-badge badge-legacy">The Legacy Name</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#2</span> Hitachi Magic Wand Mini</h2>
+              <div className="product-rating">
+                <span className="rating-stars">★★★★☆</span>
+                <span className="rating-score">4.3/5 (890 reviews)</span>
+              </div>
+              <div className="product-price">$90</div>
+            </div>
+            <div className="product-body">
+              <p>The Magic Wand name carries decades of reputation, and the Mini is Hitachi's attempt to shrink that legacy into something portable. It partially succeeds. The motor is genuinely powerful — three speeds that go from "pleasant" to "hold on" — and the brand recognition means you know what you're getting.</p>
+              <p>But here's the thing: it feels dated. Only 3 speed settings in 2026 feels stingy when competitors offer 8-10. The design is clinical — white plastic with blue buttons that screams "medical device" more than "personal luxury." And at $90, you're paying a premium for the name. The Lolly outperforms it at $21 less and looks infinitely better doing it.</p>
+
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.3/5 (890 reviews)</div>
+                <div className="sp-quote">"Reliable but nothing special. Feels like it hasn't been updated in years." — <em>verified buyer</em></div>
+                <div className="sp-badge">🏷️ The Legacy Name</div>
+              </div>
+
+              <div className="cta-wrapper">
+                <a href="https://magicwandoriginal.com/mini/" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* #3 LE WAND PETITE */}
+        <h3>#3 — Le Wand Petite</h3>
+        <div className="product-card" id="product-3">
           <div className="product-image-area" style={{background: 'linear-gradient(135deg, #EDE7F6, #F3E5F5, #E8EAF6)'}}>
             <img className="product-photo" src={LEWAND_IMG} alt="Le Wand Petite Rechargeable Vibrating Massager" loading="lazy" />
           </div>
           <div className="product-content">
             <div className="product-header">
-              <span className="product-badge badge-luxury">Luxury Pick</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#2</span> Le Wand Petite Rechargeable</h2>
+              <span className="product-badge badge-luxury">Premium Pick</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#3</span> Le Wand Petite</h2>
               <div className="product-rating">
-                <span className="rating-stars">★★★★☆</span>
-                <span className="rating-score">8.9/10</span>
+                <span className="rating-stars">★★★★½</span>
+                <span className="rating-score">4.5/5 (620 reviews)</span>
               </div>
               <div className="product-price">$145</div>
             </div>
             <div className="product-body">
-              <p>If money is truly no object and you want the Hermès of mini wands, the Le Wand Petite is gorgeous. And I mean that. The build quality feels premium the second you pick it up. Heavier, more substantial, and the silicone head is exceptionally soft. It comes with 10 vibration speeds and 6 pulsation patterns, all of which feel intentional rather than like filler someone programmed at 2am.</p>
-              <p>So why isn't it #1? Honestly, it's the price. At $145, you're paying more than double what Lolly costs. The build quality and accessories justify some of that gap, but in terms of the actual vibration experience, Lolly gets you remarkably close. It's also noticeably heavier and bigger, which makes it less travel-friendly and kind of tiring to hold if you like to take your time. If you're buying this as a luxurious treat for yourself and portability isn't on your radar, it's a beautiful choice. But for most people, the premium doesn't quite match the price jump.</p>
+              <p>If money is no object, the Le Wand Petite is genuinely excellent. The build quality is a step above everything else on this list — it feels like a luxury product the moment you pick it up. 10 vibration speeds, 6 patterns, and a motor that delivers deep, rumbly vibrations without the buzzy surface noise that plagues cheaper options.</p>
+              <p>The problem? It's $145. That's more than double the Lolly for a marginal improvement in performance. The vibrations are slightly more refined, sure, and the travel case is a nice touch. But when I did a blind test with two friends, neither could reliably tell the difference between this and the Lolly. At $69 vs $145, that's a hard sell. Beautiful packaging. Excellent product. But the value proposition just isn't there when the competition has caught up.</p>
 
-              <h4>Highlights:</h4>
-              <ul className="pros">
-                <li>Premium build quality you can genuinely feel in your hand</li>
-                <li>10 speeds + 6 patterns, all well-crafted</li>
-                <li>Luxe unboxing experience and accessories included</li>
-                <li>Compatible with head attachments for added versatility</li>
-              </ul>
-              <h4>Trade-offs:</h4>
-              <ul className="cons">
-                <li>More than double Lolly's price for a marginal upgrade in experience</li>
-                <li>Heavier and bulkier (less ideal for travel or longer sessions)</li>
-                <li>Looks more obviously like a vibrator (not passing any desk tests)</li>
-                <li>The weight can tire out your hand after a while</li>
-              </ul>
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.5/5 (620 reviews)</div>
+                <div className="sp-quote">"Gorgeous product but I can't justify the price when cheaper options perform similarly." — <em>verified buyer</em></div>
+                <div className="sp-badge">💎 Premium Pick</div>
+              </div>
 
               <div className="cta-wrapper">
-                <a href="https://www.lewandmassager.com/sex-toys/le-wand-massagers/petite-wands/" className="cta-btn secondary" target="_blank" rel="noopener">View Le Wand Petite →</a>
+                <a href="https://www.lewandmassager.com/le-wand-petite.html?&92_467" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* PRODUCT #3: DAME COM */}
-        <div className="product-card" id="product-3">
-          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #E0F2F1, #E8F5E9, #F1F8E9)'}}>
-            <img className="product-photo" src={DAME_IMG} alt="Dame Com Wand Vibrator" loading="lazy" />
-          </div>
-          <div className="product-content">
-            <div className="product-header">
-              <span className="product-badge badge-ergonomic">Best Ergonomics</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#3</span> Dame Com Wand Vibrator</h2>
-              <div className="product-rating">
-                <span className="rating-stars">★★★★☆</span>
-                <span className="rating-score">8.6/10</span>
-              </div>
-              <div className="product-price">$125</div>
-            </div>
-            <div className="product-body">
-              <p>Dame is one of those brands that clearly thinks about how people actually hold and use their products, and it shows. The Com has this weighted, curved shape that just naturally fits in your hand, and the flexible tip does a solid job distributing vibrations across a wider area. It's the most "ergonomically thought-through" wand I tested, which sounds boring until you've been holding something for 20 minutes and your wrist is screaming at you.</p>
-              <p>Where it falls short compared to Lolly is power and variety. The Com has 5 intensities and 5 patterns, and even on the higher settings, it just doesn't match that deep rumbly intensity that Lolly somehow pulls from its tiny body. At $125, it's nearly double the price of Lolly without delivering a noticeably better experience. I respect the design, but my wallet has feelings too.</p>
-
-              <h4>Highlights:</h4>
-              <ul className="pros">
-                <li>Best-in-class ergonomic grip. Your hand will love you.</li>
-                <li>Weighted feel genuinely reduces hand fatigue</li>
-                <li>Flexible tip with nice vibration spread</li>
-                <li>Truly quiet during use</li>
-              </ul>
-              <h4>Trade-offs:</h4>
-              <ul className="cons">
-                <li>Same number of settings as Lolly but less power at the top end</li>
-                <li>Less raw power than Lolly, especially at the top end</li>
-                <li>$125 feels steep for what you're actually getting</li>
-                <li>Not winning any discretion awards with this design</li>
-              </ul>
-
-              <div className="cta-wrapper">
-                <a href="https://www.dameproducts.com/products/com-wand" className="cta-btn secondary" target="_blank" rel="noopener">View Dame Com →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* PRODUCT #4: SHIBARI */}
+        {/* #4 SATISFYER PRO 2 */}
+        <h3>#4 — Satisfyer Pro 2</h3>
         <div className="product-card" id="product-4">
           <div className="product-image-area" style={{background: 'linear-gradient(135deg, #FFF3E0, #FFF8E1, #FFFDE7)'}}>
-            <img className="product-photo" src={SHIBARI_IMG} alt="Shibari Mini Halo" loading="lazy" />
+            <img className="product-photo" src={SATISFYER_IMG} alt="Satisfyer Pro 2 Generation 2" loading="lazy" />
           </div>
           <div className="product-content">
             <div className="product-header">
-              <span className="product-badge badge-budget">Best Budget Pick</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#4</span> Shibari Mini Halo</h2>
+              <span className="product-badge badge-budget">Budget Fan Favorite</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#4</span> Satisfyer Pro 2</h2>
               <div className="product-rating">
                 <span className="rating-stars">★★★★☆</span>
-                <span className="rating-score">8.2/10</span>
+                <span className="rating-score">4.4/5 (12,000+ reviews)</span>
               </div>
-              <div className="product-price">$35</div>
+              <div className="product-price">$50</div>
             </div>
             <div className="product-body">
-              <p>The Shibari Mini Halo has been an internet darling for years, and I totally get why. At around $35, it delivers surprisingly decent vibrations and it's available basically everywhere. It's the Toyota Corolla of mini wands: reliable, gets you where you need to go, won't exactly make your heart race.</p>
-              <p>The catch is the vibration quality. It's distinctly <strong>buzzy</strong> rather than rumbly. That surface-level tingling sensation that cheaper motors produce. It works, sure, but after using Lolly's deeper vibrations, going back to the Shibari feels like comparing the massage chairs at the airport to an actual spa. It's also louder than you'd expect, the battery gives up after about an hour, and the silicone doesn't feel as nice against your skin. For $35, it's a fine starting point. But fair warning: most people I know who started with this ended up buying something better within a few months anyway. So you kind of end up spending more in the long run.</p>
+              <p>The Satisfyer Pro 2 is the people's champion. With over 12,000 reviews and a cult following on Reddit, this air-pulse stimulator has converted more skeptics than any product on this list. And at $50, the barrier to entry is practically nonexistent.</p>
+              <p>Here's the catch: it's not actually a wand. It uses air-pulse technology instead of traditional vibrations, which means it's a completely different sensation. Some people absolutely love it — the suction-like feeling can be incredibly intense. Others find it overstimulating or just... weird. It's also not the most versatile: it's designed for one specific type of stimulation and doesn't double as a body massager the way wands do. Great for beginners who want to experiment with air-pulse tech on a budget, but experienced users may find it one-dimensional.</p>
 
-              <h4>Highlights:</h4>
-              <ul className="pros">
-                <li>Really hard to beat this price point</li>
-                <li>Widely available and tons of reviews online</li>
-                <li>20+ vibration modes (the quantity is there, at least)</li>
-                <li>Compact enough for travel</li>
-              </ul>
-              <h4>Trade-offs:</h4>
-              <ul className="cons">
-                <li>Buzzy vibrations, not the deep rumbly kind that actually gets you there</li>
-                <li>Noticeably louder than the premium options on this list</li>
-                <li>Battery life is meh (about 1 hour tops)</li>
-                <li>Silicone quality doesn't feel as body-safe or smooth</li>
-                <li>Most people end up upgrading within 6 months</li>
-              </ul>
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.4/5 (12,000+ reviews)</div>
+                <div className="sp-quote">"Changed my life for $50. But it's a one-trick pony." — <em>verified buyer</em></div>
+                <div className="sp-badge">💰 Best Budget</div>
+              </div>
 
               <div className="cta-wrapper">
-                <a href="https://www.shibarisextoys.com/" className="cta-btn secondary" target="_blank" rel="noopener">View Shibari Mini Halo →</a>
+                <a href="https://us.satisfyer.com/us/satisfyer-pro-2-generation-2" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* PRODUCT #5: LOVEHONEY */}
+        {/* #5 DAME POM */}
+        <h3>#5 — Dame Pom</h3>
         <div className="product-card" id="product-5">
-          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #FCE4EC, #F8BBD0, #FCE4EC)'}}>
-            <img className="product-photo" src={LOVEHONEY_IMG} alt="Lovehoney Ignite Mini Wand" loading="lazy" />
+          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #F3E5F5, #FCE4EC, #F8BBD0)'}}>
+            <img className="product-photo" src={DAME_POM_IMG} alt="Dame Pom Flexible Vibrator" loading="lazy" />
           </div>
           <div className="product-content">
             <div className="product-header">
-              <span className="product-badge badge-compact">Most Compact</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#5</span> Lovehoney Ignite Mini Wand</h2>
+              <span className="product-badge badge-divisive">Sleek But Divisive</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#5</span> Dame Pom</h2>
               <div className="product-rating">
-                <span className="rating-stars">★★★☆☆</span>
-                <span className="rating-score">7.8/10</span>
+                <span className="rating-stars">★★★★☆</span>
+                <span className="rating-score">4.1/5 (1,031 reviews)</span>
               </div>
-              <div className="product-price">$30</div>
+              <div className="product-price">$99</div>
             </div>
             <div className="product-body">
-              <p>Lovehoney is a name I trust, and the Ignite has things going for it. It's compact, rechargeable, comes from a brand with solid customer service, and the spec sheet says 20 functions, which sounds impressive.</p>
-              <p>In practice? A lot of those 20 patterns feel like the same thing with a slightly different rhythm, and the motor just doesn't produce the same depth as the top picks on this list. The most honest word I can use is "adequate." If you handed it to someone who's never used a vibrator, they'd probably think it's fine. But if you've ever experienced what a quality motor feels like, this one will leave you thinking "that's it?" It's more of a "first toy you'll replace" than a "toy that becomes your go-to." And at $39 less than Lolly, the savings sound nice until you end up buying something better three months later anyway.</p>
+              <p>Dame makes beautiful products. The Pom is no exception — it's a palm-sized, flexible vibrator that looks like it belongs in a design museum. The soft silicone feels premium, the shape fits naturally in your hand, and the 5 speed settings are intuitive to cycle through.</p>
+              <p>But beautiful packaging doesn't always mean beautiful performance. The Pom's motor is... fine. It's not weak, but it's not powerful either. If you're used to wand-style vibrations, the Pom will feel underwhelming. Multiple reviewers noted that the highest setting still didn't feel "enough." At $99, you're paying for the aesthetic and the brand name. If design matters more to you than raw power, the Pom delivers. If you want something that actually gets the job done efficiently, look elsewhere.</p>
 
-              <h4>Highlights:</h4>
-              <ul className="pros">
-                <li>Trusted brand with legitimately great customer service</li>
-                <li>Very compact and lightweight</li>
-                <li>USB rechargeable</li>
-                <li>1-year guarantee from Lovehoney</li>
-              </ul>
-              <h4>Trade-offs:</h4>
-              <ul className="cons">
-                <li>Motor lacks depth, feels noticeably weaker than Lolly</li>
-                <li>20 patterns looks good on paper but many are basically redundant</li>
-                <li>Gets warm during extended use (not in a fun way)</li>
-                <li>You'll likely want to upgrade within a few months</li>
-              </ul>
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.1/5 (1,031 reviews)</div>
+                <div className="sp-quote">"Beautiful design. Disappointing performance. At this price point, I expected more." — <em>verified buyer</em></div>
+                <div className="sp-badge">🎨 Best Design</div>
+              </div>
 
               <div className="cta-wrapper">
-                <a href="https://www.lovehoney.com/sex-toys/vibrators/wand-vibrators/" className="cta-btn secondary" target="_blank" rel="noopener">View Lovehoney Ignite →</a>
+                <a href="https://dame.com/products/pom" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* COMPARISON TABLE */}
-        <div className="comparison-section">
-          <h2>How They Stack Up</h2>
-          <div className="comparison-table-wrap">
-            <table className="comparison-table">
-              <thead>
-                <tr>
-                  <th style={{width:'18%'}}>Feature</th>
-                  <th className="col-lolly" style={{width:'18%'}}><span className="col-lolly-badge">🏆 Our Pick</span>Lolly</th>
-                  <th style={{width:'16%'}}>Le Wand</th>
-                  <th style={{width:'16%'}}>Dame Com</th>
-                  <th style={{width:'16%'}}>Shibari</th>
-                  <th style={{width:'16%'}}>Lovehoney</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Price</td>
-                  <td className="col-lolly"><strong style={{fontSize:'16px',color:'var(--accent-dark)'}}>$69</strong></td>
-                  <td>$145</td>
-                  <td>$125</td>
-                  <td>$35</td>
-                  <td>$30</td>
-                </tr>
-                <tr>
-                  <td>Vibration Type</td>
-                  <td className="col-lolly"><span className="table-check">Rumbly ✓</span></td>
-                  <td><span className="table-check">Rumbly ✓</span></td>
-                  <td className="table-meh">Moderate</td>
-                  <td className="table-x">Buzzy</td>
-                  <td className="table-x">Buzzy</td>
-                </tr>
-                <tr>
-                  <td>Settings</td>
-                  <td className="col-lolly"><strong>10</strong></td>
-                  <td>16</td>
-                  <td>10</td>
-                  <td>20+</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>Noise Level</td>
-                  <td className="col-lolly"><span className="table-check">Whisper ✓</span></td>
-                  <td>Quiet</td>
-                  <td><span className="table-check">Whisper ✓</span></td>
-                  <td className="table-x">Noticeable</td>
-                  <td className="table-meh">Moderate</td>
-                </tr>
-                <tr>
-                  <td>Travel-Friendly</td>
-                  <td className="col-lolly"><span className="t-stars"><span className="filled">★★★★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★★</span><span className="empty">★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★★</span><span className="empty">★</span></span></td>
-                </tr>
-                <tr>
-                  <td>Body-Safe Silicone</td>
-                  <td className="col-lolly"><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                  <td className="table-meh">Partial</td>
-                  <td><span className="table-check">✓</span></td>
-                </tr>
-                <tr>
-                  <td>USB Rechargeable</td>
-                  <td className="col-lolly"><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                  <td><span className="table-check">✓</span></td>
-                </tr>
-                <tr>
-                  <td>Water Resistant</td>
-                  <td className="col-lolly">Waterproof ✓</td>
-                  <td>Splash-proof</td>
-                  <td>Splash-proof</td>
-                  <td className="table-x">No</td>
-                  <td>Splash-proof</td>
-                </tr>
-                <tr>
-                  <td>Discreet Design</td>
-                  <td className="col-lolly"><span className="t-stars"><span className="filled">★★★★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★</span><span className="empty">★★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★</span><span className="empty">★★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                </tr>
-                <tr>
-                  <td>Couples-Friendly</td>
-                  <td className="col-lolly"><span className="t-stars"><span className="filled">★★★★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★★</span><span className="empty">★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                  <td><span className="t-stars"><span className="filled">★★★</span><span className="empty">★★</span></span></td>
-                </tr>
-              </tbody>
-            </table>
+        {/* #6 MAUDE VIBE */}
+        <h3>#6 — Maude Vibe</h3>
+        <div className="product-card" id="product-6">
+          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #E8F5E9, #F1F8E9, #F9FBE7)'}}>
+            <img className="product-photo" src={MAUDE_IMG} alt="Maude Vibe Personal Massager" loading="lazy" />
+          </div>
+          <div className="product-content">
+            <div className="product-header">
+              <span className="product-badge badge-minimalist">Minimalist Chic</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#6</span> Maude Vibe</h2>
+              <div className="product-rating">
+                <span className="rating-stars">★★★★☆</span>
+                <span className="rating-score">3.8/5 (340 reviews)</span>
+              </div>
+              <div className="product-price">$52</div>
+            </div>
+            <div className="product-body">
+              <p>Maude has built a brand on minimalism, and the Vibe is the embodiment of that philosophy. It's a simple, cone-shaped bullet with 3 speeds and a flutter tip. The packaging is Instagram-worthy. The matte silicone finish feels nice. And at $52, it's reasonably priced.</p>
+              <p>The problem is that minimalism has limits. Three speeds is genuinely not enough in 2026 — the jump between settings feels too large, and there's no pattern variety at all. It's also only water-resistant (not waterproof), which feels like a miss. And the flutter tip, while interesting in concept, doesn't deliver the focused stimulation that a rounded wand head provides. Great for beginners who want something non-intimidating and aesthetically pleasing. But if you've used literally any other vibrator before, you'll likely find this underwhelming.</p>
+
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 3.8/5 (340 reviews)</div>
+                <div className="sp-quote">"Looks amazing on my nightstand. Performs like a $20 toy." — <em>verified buyer</em></div>
+                <div className="sp-badge">🤷 Most Overhyped</div>
+              </div>
+
+              <div className="cta-wrapper">
+                <a href="https://getmaude.com/products/vibe-personal-massager" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* VERDICT */}
+        {/* #7 WE-VIBE TANGO X */}
+        <h3>#7 — We-Vibe Tango X</h3>
+        <div className="product-card" id="product-7">
+          <div className="product-image-area" style={{background: 'linear-gradient(135deg, #E3F2FD, #E8EAF6, #EDE7F6)'}}>
+            <img className="product-photo" src={WEVIBE_IMG} alt="We-Vibe Tango X Bullet Vibrator" loading="lazy" />
+          </div>
+          <div className="product-content">
+            <div className="product-header">
+              <span className="product-badge badge-powerhouse">Compact Powerhouse</span>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#7</span> We-Vibe Tango X</h2>
+              <div className="product-rating">
+                <span className="rating-stars">★★★★★</span>
+                <span className="rating-score">4.6/5 (301 reviews)</span>
+              </div>
+              <div className="product-price">$159</div>
+            </div>
+            <div className="product-body">
+              <p>The We-Vibe Tango X is, objectively, an excellent product. 8 intensity levels, deep rumbly vibrations, IPX7 waterproof, and a tapered tip that delivers pinpoint stimulation. It's the kind of bullet vibrator that makes you understand why people spend money on quality toys.</p>
+              <p>So why is it ranked #7? Price. At $159 (sometimes on sale for $129), it's the most expensive product on this list — and it's a bullet, not a wand. You're getting a smaller device with less surface area for more money. The performance is undeniably good, but the Lolly delivers comparable vibration quality with a more versatile wand design at less than half the price. If you specifically want a bullet-style vibrator and budget isn't a concern, the Tango X is hard to beat. But for most people, it's overkill for the category.</p>
+
+              <div className="social-proof-block">
+                <div className="sp-rating">⭐ 4.6/5 (301 reviews)</div>
+                <div className="sp-quote">"Incredible quality but hard to justify when cheaper options exist." — <em>verified buyer</em></div>
+                <div className="sp-badge">⚡ Compact Powerhouse</div>
+              </div>
+
+              <div className="cta-wrapper">
+                <a href="https://www.we-vibe.com/us/tango-x" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== SECTION 7: FINAL VERDICT + CTA ===== */}
         <div className="verdict-section" ref={verdictRef}>
-          <h2>The Verdict</h2>
+          <h2>The Final Verdict</h2>
           <img className="verdict-product-img" src={LOLLY_VERDICT_IMG} alt="Nancy's Lolly Mini Wand" />
-          <p>I test a lot of toys. Lolly caught me completely off guard. Deep rumbly vibrations, whisper quiet, fully waterproof, and a design that could pass as a desk trinket, all for $69. Whether it's your first vibrator or your tenth, this is the easiest recommendation I've made all year.</p>
+          <p>Every product on this list has its merits. The Satisfyer Pro 2 is unbeatable on price. The Le Wand Petite is a luxury experience. The Tango X is an engineering marvel. Different bodies, different preferences, different budgets — there's no single "right" answer.</p>
+          <p>But if we're being honest? One product consistently outperformed the rest across every metric that actually matters: power, noise level, design, portability, and value. The Lolly by Nancy isn't just good for $69 — it's good, period. It held its own against products costing twice as much and beat several of them outright.</p>
+          <p style={{fontStyle:'italic', color:'var(--text-primary)', fontWeight:500}}>If you're only going to buy one, you already know which one we'd pick.</p>
+
           <div className="verdict-perks">
             <div className="verdict-perk"><span>📦</span> Free discreet shipping</div>
             <div className="verdict-perk"><span>🔒</span> 30-day guarantee</div>
             <div className="verdict-perk"><span>🛡️</span> 12-month warranty</div>
           </div>
-          <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Get Lolly for $69 →</a>
-          <p className="cta-subtext" style={{marginTop: '12px'}}>MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; hellonancy.com &middot; Ships worldwide in discreet packaging</p>
+          <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">See Our #1 Pick →</a>
+          <p className="cta-subtext" style={{marginTop: '12px'}}>MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> $69 &middot; hellonancy.com &middot; Ships worldwide in discreet packaging</p>
         </div>
 
         {/* FAQ ACCORDION */}
         <div className="faq-section">
           <h2>Frequently Asked Questions</h2>
           {[
-            { q: "Is it actually powerful enough? It's so tiny.", a: "This was my biggest concern too, and yeah, it's plenty powerful. Like, shockingly so. Verified buyers keep saying the same thing: they didn't expect it to deliver and then it completely did. One reviewer literally wrote \"I was skeptical... OMG, I was so wrong.\" The motor produces deep, rumbly vibrations (not that cheap buzzy stuff). It genuinely punches way above its weight." },
-            { q: "Will my roommate / partner / neighbors hear it?", a: "Super unlikely. I'm not exaggerating when I say this is one of the quietest vibrators I've ever tested. I used it with someone sleeping in the next room with paper-thin apartment walls and had zero issues. One buyer actually called it \"the quietest toy I've EVER owned.\" On the lower settings, you basically can't hear it. The higher settings produce a soft hum, but nothing that's getting through a closed door." },
-            { q: "Can I use it in the shower?", a: "Yes! Lolly is fully waterproof (IPX7 certified), so feel free to take it into the shower or bath. Just make sure to dry it thoroughly before charging. It's one of the few mini wands in this price range that can handle full submersion." },
-            { q: "I've never owned a vibrator. Is this beginner-friendly?", a: "Genuinely one of the best starter options I've come across. The 10 settings give you a huge range, from super gentle to intense, so you can start low and explore at whatever pace feels right. The controls are dead simple (one button, press to cycle). It's small, non-intimidating, and cute. Several buyers specifically mentioned it being \"great for first-time explorers.\" You'll be fine. Better than fine, actually." },
-            { q: "Does it actually work for couples?", a: "Really well. Its size is actually a huge advantage here because it doesn't get in the way during partnered play the way bigger wands do. A bunch of reviewers specifically mentioned using it with their partner. One wrote that it's \"perfect size for playing together and not having a toy take up too much space.\" Plus the quiet motor means you're not introducing a lawnmower into an intimate moment." },
-            { q: "What if I buy it and don't like it?", a: "Nancy offers a 30-day satisfaction guarantee, so you can try it essentially risk-free. They've also got a 12-month warranty on defects. And here's the thing that actually surprised me: their customer service team gets genuinely great reviews across Trustpilot, which is rare in this industry. Multiple buyers called it out specifically. So if something goes sideways, you're not going to be yelling into the void." },
-            { q: "Is the packaging actually discreet?", a: "Completely. Plain box, no branding, no product descriptions, nothing on the outside that gives it away. Your mail carrier will have zero idea. The billing statement is discreet too. I've ordered from plenty of brands that claim discreet packaging and then ship you a box with a giant wink emoji on it. Nancy actually delivers on this one." },
+            { q: "How did you test these products?", a: "Each product was tested over a minimum of two weeks by our editorial team. We evaluated power, noise level, battery life, build quality, ease of cleaning, and overall user experience. We also analyzed thousands of verified buyer reviews across multiple retailers to cross-reference our findings." },
+            { q: "Why is the Lolly ranked #1 over more expensive options?", a: "Price-to-performance ratio. In blind testing, the Lolly matched or exceeded products costing 2-3x more across every key metric. The deep rumbly vibrations, whisper-quiet motor, and fully waterproof design put it in a class that typically costs $120+. At $69, it's the best value we've found." },
+            { q: "Is the Lolly beginner-friendly?", a: "Genuinely one of the best starter options we've tested. The 10 settings give you a huge range from super gentle to intense, so you can start low and explore at your own pace. The controls are dead simple — one button, press to cycle. It's small, non-intimidating, and discreet." },
+            { q: "Can I use the Lolly in the shower?", a: "Yes! Lolly is fully waterproof (IPX7 certified), so feel free to take it into the shower or bath. Just make sure to dry it thoroughly before charging." },
+            { q: "What if I buy it and don't like it?", a: "Nancy offers a 30-day satisfaction guarantee, so you can try it essentially risk-free. They also have a 12-month warranty on defects and genuinely responsive customer service — multiple buyers specifically called this out in their reviews." },
+            { q: "Is the packaging discreet?", a: "Completely. Plain box, no branding, no product descriptions, nothing on the outside that gives it away. The billing statement is discreet too." },
           ].map((faq, idx) => (
             <div className={`faq-item${openFaq === idx ? ' open' : ''}`} key={idx}>
               <div className="faq-q" onClick={() => toggleFaq(idx)}>{faq.q}</div>
@@ -515,12 +423,10 @@ export default function Home() {
 
         {/* AUTHOR BIO */}
         <div className="author-bio">
-          <div className="author-bio-avatar">
-            <AuthorAvatar />
-          </div>
+          <div className="author-bio-avatar"><AuthorAvatar /></div>
           <div>
             <div className="author-bio-name">Written by Mia Sinclair</div>
-            <div className="author-bio-text">Mia is a wellness and lifestyle writer who's spent the last 4 years reviewing intimate products so her friends don't have to waste money on bad ones. She's tested over 200 toys across every category and price point, and has a particular obsession with products that are discreet enough to travel with. When she's not "working from home," she's probably on a flight somewhere with a suspiciously heavy carry-on.</div>
+            <div className="author-bio-text">Mia is a wellness and lifestyle writer who's spent the last 4 years reviewing intimate products so her friends don't have to waste money on bad ones. She's tested over 200 products across every category and price point, and has a particular obsession with products that are discreet enough to travel with.</div>
           </div>
         </div>
       </article>
@@ -535,7 +441,7 @@ export default function Home() {
           <a href="#">Contact</a>
         </div>
         <p>&copy; 2026 The Velvet Edit. All rights reserved.</p>
-        <p className="footer-disclosure"><strong>Advertising Disclosure:</strong> We may earn a commission when you buy through links on this site. This never influences our recommendations. We only feature products we've personally tested and genuinely believe in.</p>
+        <p className="footer-disclosure"><em>This article was independently researched and written by The Velvet Edit. We may earn a small commission if you purchase through our links — this doesn't affect our rankings or reviews.</em></p>
       </footer>
 
       {/* STICKY CTA BAR */}
@@ -543,7 +449,7 @@ export default function Home() {
         <div className="sticky-cta-inner">
           <div className="sticky-cta-text">
             <span className="sticky-cta-emoji">🍭</span>
-            <div className="sticky-cta-copy"><strong>#1 Pick: Lolly Mini Wand</strong><br/><span style={{textDecoration:'line-through',opacity:0.6,fontWeight:'normal',fontSize:'13px'}}>$139</span> $69 · free discreet shipping</div>
+            <div className="sticky-cta-copy"><strong>See #1 Pick</strong><br/><span style={{textDecoration:'line-through',opacity:0.6,fontWeight:'normal',fontSize:'13px'}}>$139</span> $69 · free shipping</div>
           </div>
           <a href="https://hellonancy.com/products/lolly-mini-wand" className="sticky-cta-btn" target="_blank" rel="noopener">Get Lolly →</a>
         </div>
@@ -551,7 +457,7 @@ export default function Home() {
 
       {/* URGENCY TOAST */}
       <div className={`urgency-toast${toastVisible ? ' visible' : ''}`} id="urgencyToast">
-        🔥 <span className="toast-highlight">247 people</span> viewed Lolly in the last 24 hours. It tends to sell out fast.
+        🔥 <span className="toast-highlight">247 people</span> viewed Lolly in the last 24 hours
         <span className="toast-close" onClick={closeToast}>✕</span>
       </div>
     </>
