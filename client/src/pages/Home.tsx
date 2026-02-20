@@ -99,7 +99,7 @@ export default function Home() {
       {/* HERO */}
       <header className="hero">
         <span className="hero-category">Reviews &middot; Wellness</span>
-        <h1>Small But Mighty: 5 Mini Wand Vibrators <span className="title-highlight">So Powerful, You'll Cancel Plans</span></h1>
+        <h1>Small But Mighty: 5 Mini Wands <span className="title-highlight">So Powerful, You'll Cancel Plans</span></h1>
         <p className="hero-subtitle">I tested over 20 mini wands across every price point so you don't have to. One of them genuinely made me call in sick to work. Here are the only 5 worth your money in 2026.</p>
         <div className="hero-meta">
           <div className="author-avatar">
