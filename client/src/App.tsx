@@ -4,12 +4,12 @@ import Home from "./pages/Home";
 function App() {
   return (
     <Switch>
-      <Route path="/best-mini-wand-vibrators" component={Home} />
+      <Route path="/best-mini-wands-2026" component={Home} />
       <Route path="/">
-        <Redirect to="/best-mini-wand-vibrators" />
+        <Redirect to="/best-mini-wands-2026" />
       </Route>
       <Route>
-        <Redirect to="/best-mini-wand-vibrators" />
+        <Redirect to="/best-mini-wands-2026" />
       </Route>
     </Switch>
   );
