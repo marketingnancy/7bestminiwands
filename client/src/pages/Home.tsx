@@ -245,7 +245,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.lewandmassager.com/sex-toys/le-wand-massagers/petite-wands/" className="cta-btn secondary" target="_blank" rel="noopener">View Le Wand Petite →</a>
+                <a href="https://www.lewandmassager.com/le-wand-petite.html?&92_467" className="cta-btn secondary" target="_blank" rel="noopener">View Le Wand Petite →</a>
               </div>
             </div>
           </div>
