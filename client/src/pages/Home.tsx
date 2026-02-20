@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 // CDN image URLs
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/YCDdxWLbLqRVUTYr.png";
-const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/WYEnKGNBWydsUsVR.png";
+const SHIBARI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/VcDUZGFSJKjpXRVg.jpg";
 const LOVEHONEY_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/pORvxgXCjTPrOwJn.jpg";
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
 const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
@@ -29,18 +29,19 @@ export default function Home() {
   const [toastVisible, setToastVisible] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const product2Ref = useRef<HTMLDivElement>(null);
+  const lollyEndRef = useRef<HTMLDivElement>(null);
   const verdictRef = useRef<HTMLDivElement>(null);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Sticky CTA logic
   useEffect(() => {
     function checkSticky() {
-      const p2 = product2Ref.current;
+      const lollyEnd = lollyEndRef.current;
       const verdict = verdictRef.current;
-      if (!p2) return;
-      const p2Rect = p2.getBoundingClientRect();
+      if (!lollyEnd) return;
+      const lollyEndRect = lollyEnd.getBoundingClientRect();
       const verdictRect = verdict ? verdict.getBoundingClientRect() : null;
-      const shouldShow = p2Rect.top < window.innerHeight * 0.7;
+      const shouldShow = lollyEndRect.top < 0;
       const shouldHide = verdictRect ? verdictRect.top < window.innerHeight * 0.5 : false;
       setStickyVisible(shouldShow && !shouldHide);
     }
@@ -99,7 +100,7 @@ export default function Home() {
       {/* HERO */}
       <header className="hero">
         <span className="hero-category">Reviews &middot; Wellness</span>
-        <h1>Small But Mighty: 5 Mini Wands <span className="title-highlight">So Powerful, You'll Cancel Plans</span></h1>
+        <h1>Small But Mighty: 5 Mini Wand Vibrators <span className="title-highlight">So Powerful, You'll Cancel Plans</span></h1>
         <p className="hero-subtitle">I tested over 20 mini wands across every price point so you don't have to. One of them genuinely made me call in sick to work. Here are the only 5 worth your money in 2026.</p>
         <div className="hero-meta">
           <div className="author-avatar">
@@ -203,10 +204,11 @@ export default function Home() {
               <div className="cta-wrapper">
                 <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Get Lolly for $69 →</a>
               </div>
-              <p className="cta-subtext">Free discreet shipping &middot; 30-day satisfaction guarantee &middot; 12 month warranty</p>
+              <p className="cta-subtext">MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; Free discreet shipping &middot; 30-day satisfaction guarantee &middot; 12 month warranty</p>
             </div>
           </div>
         </div>
+        <div ref={lollyEndRef} />
 
         <p>Now, the rest of this list is genuinely solid. These are all products I'd happily recommend if Lolly somehow didn't exist. But it does, and at that price, it's really hard to argue with. That said, depending on your priorities and your budget, one of these runners-up might click better for you. So let's keep going.</p>
 
@@ -245,7 +247,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.lewandmassager.com/le-wand-petite.html?&92_467" className="cta-btn secondary" target="_blank" rel="noopener">View Le Wand Petite →</a>
+                <a href="https://www.lewandmassager.com/sex-toys/le-wand-massagers/petite-wands/" className="cta-btn secondary" target="_blank" rel="noopener">View Le Wand Petite →</a>
               </div>
             </div>
           </div>
@@ -264,11 +266,11 @@ export default function Home() {
                 <span className="rating-stars">★★★★☆</span>
                 <span className="rating-score">8.6/10</span>
               </div>
-              <div className="product-price">$119</div>
+              <div className="product-price">$125</div>
             </div>
             <div className="product-body">
               <p>Dame is one of those brands that clearly thinks about how people actually hold and use their products, and it shows. The Com has this weighted, curved shape that just naturally fits in your hand, and the flexible tip does a solid job distributing vibrations across a wider area. It's the most "ergonomically thought-through" wand I tested, which sounds boring until you've been holding something for 20 minutes and your wrist is screaming at you.</p>
-              <p>Where it falls short compared to Lolly is power and variety. The Com has 5 intensities and 5 patterns, and even on the higher settings, it just doesn't match that deep rumbly intensity that Lolly somehow pulls from its tiny body. At $119, it's nearly double the price of Lolly without delivering a noticeably better experience. I respect the design, but my wallet has feelings too.</p>
+              <p>Where it falls short compared to Lolly is power and variety. The Com has 5 intensities and 5 patterns, and even on the higher settings, it just doesn't match that deep rumbly intensity that Lolly somehow pulls from its tiny body. At $125, it's nearly double the price of Lolly without delivering a noticeably better experience. I respect the design, but my wallet has feelings too.</p>
 
               <h4>Highlights:</h4>
               <ul className="pros">
@@ -281,12 +283,12 @@ export default function Home() {
               <ul className="cons">
                 <li>Same number of settings as Lolly but less power at the top end</li>
                 <li>Less raw power than Lolly, especially at the top end</li>
-                <li>$119 feels steep for what you're actually getting</li>
+                <li>$125 feels steep for what you're actually getting</li>
                 <li>Not winning any discretion awards with this design</li>
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://dame.com/products/com" className="cta-btn secondary" target="_blank" rel="noopener">View Dame Com →</a>
+                <a href="https://www.dameproducts.com/products/com-wand" className="cta-btn secondary" target="_blank" rel="noopener">View Dame Com →</a>
               </div>
             </div>
           </div>
@@ -305,11 +307,11 @@ export default function Home() {
                 <span className="rating-stars">★★★★☆</span>
                 <span className="rating-score">8.2/10</span>
               </div>
-              <div className="product-price">$82</div>
+              <div className="product-price">$35</div>
             </div>
             <div className="product-body">
-              <p>The Shibari Mini Halo has been an internet darling for years, and I totally get why. At around $82, it delivers surprisingly decent vibrations and it's available basically everywhere. It's the Toyota Corolla of mini wands: reliable, gets you where you need to go, won't exactly make your heart race.</p>
-              <p>The catch is the vibration quality. It's distinctly <strong>buzzy</strong> rather than rumbly. That surface-level tingling sensation that cheaper motors produce. It works, sure, but after using Lolly's deeper vibrations, going back to the Shibari feels like comparing the massage chairs at the airport to an actual spa. It's also louder than you'd expect, the battery gives up after about an hour, and the silicone doesn't feel as nice against your skin. For $82, it's a questionable value. But fair warning: most people I know who started with this ended up buying something better within a few months anyway. So you kind of end up spending more in the long run.</p>
+              <p>The Shibari Mini Halo has been an internet darling for years, and I totally get why. At around $35, it delivers surprisingly decent vibrations and it's available basically everywhere. It's the Toyota Corolla of mini wands: reliable, gets you where you need to go, won't exactly make your heart race.</p>
+              <p>The catch is the vibration quality. It's distinctly <strong>buzzy</strong> rather than rumbly. That surface-level tingling sensation that cheaper motors produce. It works, sure, but after using Lolly's deeper vibrations, going back to the Shibari feels like comparing the massage chairs at the airport to an actual spa. It's also louder than you'd expect, the battery gives up after about an hour, and the silicone doesn't feel as nice against your skin. For $35, it's a fine starting point. But fair warning: most people I know who started with this ended up buying something better within a few months anyway. So you kind of end up spending more in the long run.</p>
 
               <h4>Highlights:</h4>
               <ul className="pros">
@@ -328,7 +330,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.easytoys.nl/shibari-mini-halo-zwart-p-35766/" className="cta-btn secondary" target="_blank" rel="noopener">View Shibari Mini Halo →</a>
+                <a href="https://www.shibarisextoys.com/" className="cta-btn secondary" target="_blank" rel="noopener">View Shibari Mini Halo →</a>
               </div>
             </div>
           </div>
@@ -347,7 +349,7 @@ export default function Home() {
                 <span className="rating-stars">★★★☆☆</span>
                 <span className="rating-score">7.8/10</span>
               </div>
-              <div className="product-price">$40</div>
+              <div className="product-price">$30</div>
             </div>
             <div className="product-body">
               <p>Lovehoney is a name I trust, and the Ignite has things going for it. It's compact, rechargeable, comes from a brand with solid customer service, and the spec sheet says 20 functions, which sounds impressive.</p>
@@ -369,7 +371,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.lovehoney.com/sex-toys/vibrators/massage-wand-vibrators/p/lovehoney-ignite-20-function-mini-wand-vibrator/a41331g75301.html" className="cta-btn secondary" target="_blank" rel="noopener">View Lovehoney Ignite →</a>
+                <a href="https://www.lovehoney.com/sex-toys/vibrators/wand-vibrators/" className="cta-btn secondary" target="_blank" rel="noopener">View Lovehoney Ignite →</a>
               </div>
             </div>
           </div>
@@ -395,9 +397,9 @@ export default function Home() {
                   <td>Price</td>
                   <td className="col-lolly"><strong style={{fontSize:'16px',color:'var(--accent-dark)'}}>$69</strong></td>
                   <td>$145</td>
-                  <td>$119</td>
-                  <td>$82</td>
-                  <td>$40</td>
+                  <td>$125</td>
+                  <td>$35</td>
+                  <td>$30</td>
                 </tr>
                 <tr>
                   <td>Vibration Type</td>
@@ -487,7 +489,7 @@ export default function Home() {
             <div className="verdict-perk"><span>🛡️</span> 12-month warranty</div>
           </div>
           <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Get Lolly for $69 →</a>
-          <p className="cta-subtext" style={{marginTop: '12px'}}>hellonancy.com &middot; Ships worldwide in discreet packaging</p>
+          <p className="cta-subtext" style={{marginTop: '12px'}}>MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; hellonancy.com &middot; Ships worldwide in discreet packaging</p>
         </div>
 
         {/* FAQ ACCORDION */}
@@ -541,7 +543,7 @@ export default function Home() {
         <div className="sticky-cta-inner">
           <div className="sticky-cta-text">
             <span className="sticky-cta-emoji">🍭</span>
-            <div className="sticky-cta-copy"><strong>#1 Pick: Lolly Mini Wand</strong><br/>$69 with free discreet shipping</div>
+            <div className="sticky-cta-copy"><strong>#1 Pick: Lolly Mini Wand</strong><br/><span style={{textDecoration:'line-through',opacity:0.6,fontWeight:'normal',fontSize:'13px'}}>$139</span> $69 · free discreet shipping</div>
           </div>
           <a href="https://hellonancy.com/products/lolly-mini-wand" className="sticky-cta-btn" target="_blank" rel="noopener">Get Lolly →</a>
         </div>
