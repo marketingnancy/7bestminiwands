@@ -264,11 +264,11 @@ export default function Home() {
                 <span className="rating-stars">★★★★☆</span>
                 <span className="rating-score">8.6/10</span>
               </div>
-              <div className="product-price">$125</div>
+              <div className="product-price">$119</div>
             </div>
             <div className="product-body">
               <p>Dame is one of those brands that clearly thinks about how people actually hold and use their products, and it shows. The Com has this weighted, curved shape that just naturally fits in your hand, and the flexible tip does a solid job distributing vibrations across a wider area. It's the most "ergonomically thought-through" wand I tested, which sounds boring until you've been holding something for 20 minutes and your wrist is screaming at you.</p>
-              <p>Where it falls short compared to Lolly is power and variety. The Com has 5 intensities and 5 patterns, and even on the higher settings, it just doesn't match that deep rumbly intensity that Lolly somehow pulls from its tiny body. At $125, it's nearly double the price of Lolly without delivering a noticeably better experience. I respect the design, but my wallet has feelings too.</p>
+              <p>Where it falls short compared to Lolly is power and variety. The Com has 5 intensities and 5 patterns, and even on the higher settings, it just doesn't match that deep rumbly intensity that Lolly somehow pulls from its tiny body. At $119, it's nearly double the price of Lolly without delivering a noticeably better experience. I respect the design, but my wallet has feelings too.</p>
 
               <h4>Highlights:</h4>
               <ul className="pros">
@@ -281,12 +281,12 @@ export default function Home() {
               <ul className="cons">
                 <li>Same number of settings as Lolly but less power at the top end</li>
                 <li>Less raw power than Lolly, especially at the top end</li>
-                <li>$125 feels steep for what you're actually getting</li>
+                <li>$119 feels steep for what you're actually getting</li>
                 <li>Not winning any discretion awards with this design</li>
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.dameproducts.com/products/com-wand" className="cta-btn secondary" target="_blank" rel="noopener">View Dame Com →</a>
+                <a href="https://dame.com/products/com" className="cta-btn secondary" target="_blank" rel="noopener">View Dame Com →</a>
               </div>
             </div>
           </div>
@@ -395,7 +395,7 @@ export default function Home() {
                   <td>Price</td>
                   <td className="col-lolly"><strong style={{fontSize:'16px',color:'var(--accent-dark)'}}>$69</strong></td>
                   <td>$145</td>
-                  <td>$125</td>
+                  <td>$119</td>
                   <td>$35</td>
                   <td>$30</td>
                 </tr>
