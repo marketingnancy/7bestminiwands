@@ -20,13 +20,13 @@ const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 
 // Product data
 const PRODUCTS = [
-  { id: "product-1", name: "Lolly by Nancy", tagline: "Editor's Pick", rating: "4.8", stars: "★★★★★", img: LOLLY_IMG, bg: "linear-gradient(135deg, #FFE5E0, #FFF0EE, #FCEAE6)" },
-  { id: "product-2", name: "Hitachi Magic Wand Mini", tagline: "The legacy name", rating: "4.3", stars: "★★★★☆", img: HITACHI_IMG, bg: "linear-gradient(135deg, #E8EAF6, #F5F5F5, #ECEFF1)" },
-  { id: "product-3", name: "Le Wand Petite", tagline: "Premium but pricey", rating: "4.5", stars: "★★★★½", img: LEWAND_IMG, bg: "linear-gradient(135deg, #EDE7F6, #F3E5F5, #E8EAF6)" },
-  { id: "product-4", name: "Satisfyer Pro 2", tagline: "Budget fan favorite", rating: "4.4", stars: "★★★★☆", img: SATISFYER_IMG, bg: "linear-gradient(135deg, #FFF3E0, #FFF8E1, #FFFDE7)" },
-  { id: "product-5", name: "Dame Pom", tagline: "Sleek but divisive", rating: "4.1", stars: "★★★★☆", img: DAME_POM_IMG, bg: "linear-gradient(135deg, #F3E5F5, #FCE4EC, #F8BBD0)" },
-  { id: "product-6", name: "Maude Vibe", tagline: "Minimalist chic", rating: "3.8", stars: "★★★★☆", img: MAUDE_IMG, bg: "linear-gradient(135deg, #E8F5E9, #F1F8E9, #F9FBE7)" },
-  { id: "product-7", name: "We-Vibe Tango X", tagline: "Compact powerhouse", rating: "4.6", stars: "★★★★★", img: WEVIBE_IMG, bg: "linear-gradient(135deg, #E3F2FD, #E8EAF6, #EDE7F6)" },
+  { id: "product-1", name: "Lolly", shortName: "Lolly", verdict: "Our #1 Pick", rating: "4.8", stars: "★★★★★", img: LOLLY_IMG },
+  { id: "product-2", name: "Hitachi Magic Wand Mini", shortName: "Hitachi", verdict: "Legacy name", rating: "4.3", stars: "★★★★☆", img: HITACHI_IMG },
+  { id: "product-3", name: "Le Wand Petite", shortName: "Le Wand", verdict: "Premium, pricey", rating: "4.5", stars: "★★★★½", img: LEWAND_IMG },
+  { id: "product-4", name: "Satisfyer Pro 2", shortName: "Satisfyer", verdict: "Budget fave", rating: "4.4", stars: "★★★★☆", img: SATISFYER_IMG },
+  { id: "product-5", name: "Dame Pom", shortName: "Dame", verdict: "Divisive", rating: "4.1", stars: "★★★★☆", img: DAME_POM_IMG },
+  { id: "product-6", name: "Maude Vibe", shortName: "Maude", verdict: "Overhyped", rating: "3.8", stars: "★★★¾☆", img: MAUDE_IMG },
+  { id: "product-7", name: "We-Vibe Tango X", shortName: "We-Vibe", verdict: "Powerhouse", rating: "4.6", stars: "★★★★★", img: WEVIBE_IMG },
 ];
 
 function AuthorAvatar() {
@@ -121,8 +121,9 @@ export default function Home() {
                   <img src={p.img} alt={p.name} loading="lazy" />
                 </div>
               </div>
-              <div className="gallery-card-name">{p.name.split(' ').slice(0, 2).join(' ')}</div>
-              <div className="gallery-card-rank">{i === 0 ? '★ Winner' : `#${i + 1}`}</div>
+              <div className="gallery-card-name">{p.shortName}</div>
+              <div className="gallery-card-stars">{p.stars}</div>
+              <div className="gallery-card-verdict">{p.verdict}</div>
             </div>
           ))}
         </div>
