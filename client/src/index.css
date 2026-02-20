@@ -158,64 +158,85 @@ body {
   border: 1px solid var(--border);
 }
 
-/* ========== PRODUCT GALLERY ========== */
+/* ========== PRODUCT GALLERY (Stories Style) ========== */
 .product-gallery-section {
-  max-width: 1100px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 36px 24px 0;
 }
+.gallery-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
 .product-gallery {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 .gallery-card {
   cursor: pointer;
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.3s ease;
   text-align: center;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  width: 85px;
 }
 .gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
+  transform: scale(1.06);
 }
-.gallery-card-img {
-  aspect-ratio: 1;
+.gallery-card-ring {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  padding: 3px;
+  margin: 0 auto 8px;
+  background: linear-gradient(135deg, #E8E4DE, #D4D0CA);
+  transition: all 0.3s ease;
+}
+.gallery-card.is-winner .gallery-card-ring {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 2px 12px rgba(232,133,122,0.35);
+}
+.gallery-card:hover .gallery-card-ring {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+}
+.gallery-card-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--warm-white);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 12px;
 }
-.gallery-card-img img {
-  width: 100%;
-  height: 100%;
+.gallery-card-circle img {
+  width: 80%;
+  height: 80%;
   object-fit: contain;
-}
-.gallery-card-info {
-  padding: 10px 8px 14px;
-  border-top: 1px solid var(--border);
 }
 .gallery-card-name {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-primary);
-  line-height: 1.3;
-  margin-bottom: 4px;
-}
-.gallery-card-stars {
-  font-size: 11px;
-  color: var(--star);
+  line-height: 1.25;
   margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.gallery-card-tagline {
+.gallery-card-rank {
   font-size: 10.5px;
   color: var(--text-muted);
-  line-height: 1.3;
+  font-weight: 500;
+}
+.gallery-card.is-winner .gallery-card-rank {
+  color: var(--accent-dark);
+  font-weight: 700;
 }
 
 /* ========== TRUST BAR ========== */
@@ -889,9 +910,10 @@ a.sticky-cta-btn:hover {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .product-gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .product-gallery { gap: 14px; }
+  .gallery-card { width: 75px; }
+  .gallery-card-ring { width: 68px; height: 68px; }
+  .gallery-card-name { font-size: 10.5px; }
 }
 @media (max-width: 768px) {
   body { font-size: 16px; line-height: 1.7; }
@@ -902,17 +924,22 @@ a.sticky-cta-btn:hover {
   .hero-dateline { font-size: 12px; margin-bottom: 14px; }
   .affiliate-note { font-size: 12px; padding: 10px 14px; }
 
-  /* Gallery mobile */
-  .product-gallery-section { padding: 24px 18px 0; }
+  /* Gallery mobile - stories style */
+  .product-gallery-section { padding: 20px 8px 0; }
   .product-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 8px;
   }
-  .gallery-card-img { padding: 8px; }
-  .gallery-card-info { padding: 6px 6px 10px; }
-  .gallery-card-name { font-size: 10.5px; }
-  .gallery-card-stars { font-size: 10px; }
-  .gallery-card-tagline { font-size: 9px; }
+  .product-gallery::-webkit-scrollbar { display: none; }
+  .gallery-card { width: 62px; min-width: 62px; }
+  .gallery-card-ring { width: 56px; height: 56px; margin-bottom: 6px; }
+  .gallery-card-name { font-size: 9.5px; }
+  .gallery-card-rank { font-size: 9px; }
+  .gallery-section-title { font-size: 10px; letter-spacing: 1.5px; margin-bottom: 14px; }
 
   /* Trust bar mobile */
   .trust-bar {

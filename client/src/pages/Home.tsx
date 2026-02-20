@@ -110,19 +110,19 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ===== SECTION 2: CLICKABLE PRODUCT GALLERY ===== */}
+      {/* ===== SECTION 2: CLICKABLE PRODUCT GALLERY (Stories Style) ===== */}
       <section className="product-gallery-section">
+        <div className="gallery-section-title">What I Tested</div>
         <div className="product-gallery">
-          {PRODUCTS.map((p) => (
-            <div className="gallery-card" key={p.id} onClick={() => scrollToProduct(p.id)}>
-              <div className="gallery-card-img" style={{ background: p.bg }}>
-                <img src={p.img} alt={p.name} loading="lazy" />
+          {PRODUCTS.map((p, i) => (
+            <div className={`gallery-card${i === 0 ? ' is-winner' : ''}`} key={p.id} onClick={() => scrollToProduct(p.id)}>
+              <div className="gallery-card-ring">
+                <div className="gallery-card-circle">
+                  <img src={p.img} alt={p.name} loading="lazy" />
+                </div>
               </div>
-              <div className="gallery-card-info">
-                <div className="gallery-card-name">{p.name}</div>
-                <div className="gallery-card-stars">{p.stars} {p.rating}</div>
-                <div className="gallery-card-tagline"><em>"{p.tagline}"</em></div>
-              </div>
+              <div className="gallery-card-name">{p.name.split(' ').slice(0, 2).join(' ')}</div>
+              <div className="gallery-card-rank">{i === 0 ? '★ Winner' : `#${i + 1}`}</div>
             </div>
           ))}
         </div>
