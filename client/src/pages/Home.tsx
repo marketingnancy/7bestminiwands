@@ -347,7 +347,7 @@ export default function Home() {
                 <span className="rating-stars">★★★☆☆</span>
                 <span className="rating-score">7.8/10</span>
               </div>
-              <div className="product-price">$30</div>
+              <div className="product-price">$40</div>
             </div>
             <div className="product-body">
               <p>Lovehoney is a name I trust, and the Ignite has things going for it. It's compact, rechargeable, comes from a brand with solid customer service, and the spec sheet says 20 functions, which sounds impressive.</p>
@@ -369,7 +369,7 @@ export default function Home() {
               </ul>
 
               <div className="cta-wrapper">
-                <a href="https://www.lovehoney.com/sex-toys/vibrators/wand-vibrators/" className="cta-btn secondary" target="_blank" rel="noopener">View Lovehoney Ignite →</a>
+                <a href="https://www.lovehoney.com/sex-toys/vibrators/massage-wand-vibrators/p/lovehoney-ignite-20-function-mini-wand-vibrator/a41331g75301.html" className="cta-btn secondary" target="_blank" rel="noopener">View Lovehoney Ignite →</a>
               </div>
             </div>
           </div>
@@ -397,7 +397,7 @@ export default function Home() {
                   <td>$145</td>
                   <td>$119</td>
                   <td>$82</td>
-                  <td>$30</td>
+                  <td>$40</td>
                 </tr>
                 <tr>
                   <td>Vibration Type</td>
