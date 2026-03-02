@@ -18,6 +18,13 @@ const MAUDE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file
 const WEVIBE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg";
 const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/AhVphAfTJpLeUnVh.jpg";
 
+// Declare global gtag_report_conversion from Google Ads
+declare global {
+  interface Window {
+    gtag_report_conversion?: (url?: string) => boolean;
+  }
+}
+
 // Product data
 const PRODUCTS = [
   { id: "product-1", name: "Lolly", shortName: "Lolly", verdict: "Our #1 Pick", rating: "4.8", stars: "★★★★★", img: LOLLY_IMG },
@@ -171,7 +178,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">Check Availability →</a>
+                <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>Check Availability →</a>
               </div>
               <p className="cta-subtext">MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> &middot; Free discreet shipping &middot; 30-day satisfaction guarantee</p>
             </div>
@@ -247,7 +254,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://www.lewandmassager.com/le-wand-petite.html?&92_467" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+                <a href="https://www.lewandmassager.com/le-wand-petite.html?&92_467" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -280,7 +287,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://us.satisfyer.com/us/satisfyer-pro-2-generation-2" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+                <a href="https://us.satisfyer.com/us/satisfyer-pro-2-generation-2" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -313,7 +320,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://dame.com/products/pom" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+                <a href="https://dame.com/products/pom" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -346,7 +353,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://getmaude.com/products/vibe-personal-massager" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+                <a href="https://getmaude.com/products/vibe-personal-massager" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -379,7 +386,7 @@ export default function Home() {
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://www.we-vibe.com/us/tango-x" className="cta-btn secondary" target="_blank" rel="noopener">See Price →</a>
+                <a href="https://www.we-vibe.com/us/tango-x" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -398,7 +405,7 @@ export default function Home() {
             <div className="verdict-perk"><span>🔒</span> 30-day guarantee</div>
             <div className="verdict-perk"><span>🛡️</span> 12-month warranty</div>
           </div>
-          <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener">See Our #1 Pick →</a>
+          <a href="https://hellonancy.com/products/lolly-mini-wand" className="cta-btn" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Our #1 Pick →</a>
           <p className="cta-subtext" style={{marginTop: '12px'}}>MSRP <span style={{textDecoration:'line-through',opacity:0.6}}>$139</span> $69 &middot; hellonancy.com &middot; Ships worldwide in discreet packaging</p>
         </div>
 
@@ -452,7 +459,7 @@ export default function Home() {
             <span className="sticky-cta-emoji">🍭</span>
             <div className="sticky-cta-copy"><strong>See #1 Pick</strong><br/><span style={{textDecoration:'line-through',opacity:0.6,fontWeight:'normal',fontSize:'13px'}}>$139</span> $69 · free shipping</div>
           </div>
-          <a href="https://hellonancy.com/products/lolly-mini-wand" className="sticky-cta-btn" target="_blank" rel="noopener">Get Lolly →</a>
+          <a href="https://hellonancy.com/products/lolly-mini-wand" className="sticky-cta-btn" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>Get Lolly →</a>
         </div>
       </div>
 

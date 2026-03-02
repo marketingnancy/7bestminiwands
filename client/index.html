@@ -151,6 +151,42 @@
       ]
     }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11033179838"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11033179838');
+    </script>
+    <!-- Event snippet for Shopify Purchase conversion page (page load) -->
+    <script>
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11033179838/wazqCJ385ZgYEL7tg40p',
+        'value': 1.0,
+        'currency': 'HKD',
+        'transaction_id': ''
+      });
+    </script>
+    <!-- Event snippet for Shopify Purchase conversion (click) -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11033179838/wazqCJ385ZgYEL7tg40p',
+        'value': 1.0,
+        'currency': 'HKD',
+        'transaction_id': '',
+        'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -164,13 +200,14 @@
     fbq('init', '832767357702650');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=832767357702650&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- End Meta Pixel Code (noscript fallback moved to body) -->
   </head>
 
   <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=832767357702650&ev=PageView&noscript=1"
+    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script
