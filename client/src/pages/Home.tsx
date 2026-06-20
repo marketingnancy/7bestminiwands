@@ -16,7 +16,7 @@ const SATISFYER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_
 const DAME_POM_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg";
 const MAUDE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg";
 const WEVIBE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg";
-const AUTHOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/AhVphAfTJpLeUnVh.jpg";
+const AUTHOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/egnMscS7ogC6ZmyokR2ext/mia-sinclair-v2-CiYiDeLaAXiEJpSNmcgWAW.webp";
 
 // Declare global gtag_report_conversion from Google Ads
 declare global {
