@@ -12,7 +12,7 @@ const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d
 const LOLLY_VERDICT_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
 const LEWAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg";
 const HITACHI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg";
-const SATISFYER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HWjQSFZjUqAOURer.jpg";
+const SATISFYER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/MRuxybfbMPvwpuMA.jpg";
 const DAME_POM_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg";
 const MAUDE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg";
 const WEVIBE_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg";
@@ -30,7 +30,7 @@ const PRODUCTS = [
   { id: "product-1", name: "Lolly", shortName: "Lolly", verdict: "Our #1 Pick", rating: "4.8", stars: "★★★★★", img: LOLLY_IMG },
   { id: "product-2", name: "Hitachi Magic Wand Mini", shortName: "Hitachi", verdict: "Legacy name", rating: "4.3", stars: "★★★★☆", img: HITACHI_IMG },
   { id: "product-3", name: "Le Wand Petite", shortName: "Le Wand", verdict: "Premium, pricey", rating: "4.5", stars: "★★★★½", img: LEWAND_IMG },
-  { id: "product-4", name: "Satisfyer Pro 2", shortName: "Satisfyer", verdict: "Budget fave", rating: "4.4", stars: "★★★★☆", img: SATISFYER_IMG },
+  { id: "product-4", name: "Satisfyer Wand-er Woman", shortName: "Satisfyer", verdict: "Budget fave", rating: "4.2", stars: "★★★★☆", img: SATISFYER_IMG },
   { id: "product-5", name: "Dame Pom", shortName: "Dame", verdict: "Divisive", rating: "4.1", stars: "★★★★☆", img: DAME_POM_IMG },
   { id: "product-6", name: "Maude Vibe", shortName: "Maude", verdict: "Overhyped", rating: "3.8", stars: "★★★¾☆", img: MAUDE_IMG },
   { id: "product-7", name: "We-Vibe Tango X", shortName: "We-Vibe", verdict: "Powerhouse", rating: "4.6", stars: "★★★★★", img: WEVIBE_IMG },
@@ -164,9 +164,9 @@ export default function Home() {
                 <td>—</td>
               </tr>
               <tr>
-                <td>Satisfyer Pro 2</td>
+                <td>Satisfyer Wand-er Woman</td>
                 <td>$50</td>
-                <td>⭐ 4.4/5</td>
+                <td>⭐ 4.2/5</td>
                 <td>Budget</td>
                 <td>—</td>
               </tr>
@@ -355,34 +355,34 @@ export default function Home() {
           </div>
         </div>
 
-        {/* #4 SATISFYER PRO 2 */}
-        <h3>#4 — Satisfyer Pro 2</h3>
+        {/* #4 SATISFYER WAND-ER WOMAN */}
+        <h3>#4 — Satisfyer Wand-er Woman</h3>
         <div className="product-card" id="product-4">
           <div className="product-image-area" style={{background: 'linear-gradient(135deg, #FFF3E0, #FFF8E1, #FFFDE7)'}}>
-            <img className="product-photo" src={SATISFYER_IMG} alt="Satisfyer Pro 2 Generation 2" loading="lazy" />
+            <img className="product-photo" src={SATISFYER_IMG} alt="Satisfyer Wand-er Woman" loading="lazy" />
           </div>
           <div className="product-content">
             <div className="product-header">
               <span className="product-badge badge-budget">Budget Fan Favorite</span>
-              <h2 className="product-title" style={{margin:0}}><span className="rank">#4</span> Satisfyer Pro 2</h2>
+              <h2 className="product-title" style={{margin:0}}><span className="rank">#4</span> Satisfyer Wand-er Woman</h2>
               <div className="product-rating">
                 <span className="rating-stars">★★★★☆</span>
-                <span className="rating-score">4.4/5 (12,000+ reviews)</span>
+                <span className="rating-score">4.2/5 (1,500+ reviews)</span>
               </div>
               <div className="product-price">$50</div>
             </div>
             <div className="product-body">
-              <p>The Satisfyer Pro 2 is the people's champion. With over 12,000 reviews and a cult following on Reddit, this air-pulse stimulator has converted more skeptics than any product on this list. And at $50, the barrier to entry is practically nonexistent.</p>
-              <p>Here's the catch: it's not actually a wand. It uses air-pulse technology instead of traditional vibrations, which means it's a completely different sensation. Some people absolutely love it — the suction-like feeling can be incredibly intense. Others find it overstimulating or just... weird. It's also not the most versatile: it's designed for one specific type of stimulation and doesn't double as a body massager the way wands do. Great for beginners who want to experiment with air-pulse tech on a budget, but experienced users may find it one-dimensional.</p>
+              <p>The Satisfyer Wand-er Woman is the budget wand that keeps showing up in Reddit threads. At around $50, it's the cheapest full-size wand on this list — and it delivers surprisingly strong vibrations with 50 different combinations. The XXL head covers a lot of surface area, and the flexible neck helps with angles.</p>
+              <p>Here's the catch: it's heavy. At over 600 grams, it's nearly three times the weight of the Lolly. The battery life is inconsistent — multiple reviewers report it dying mid-session after a few months. And the vibrations lean buzzy rather than rumbly, which means surface-level stimulation that can feel numbing over time. For the price, it's a solid entry point. But if you use it regularly, you'll likely outgrow it within a year.</p>
 
               <div className="social-proof-block">
-                <div className="sp-rating">⭐ 4.4/5 (12,000+ reviews)</div>
-                <div className="sp-quote">"Changed my life for $50. But it's a one-trick pony." — <em>verified buyer</em></div>
+                <div className="sp-rating">⭐ 4.2/5 (1,500+ reviews)</div>
+                <div className="sp-quote">"Great starter wand for the price. But it's heavy and the battery died after 8 months." — <em>verified buyer</em></div>
                 <div className="sp-badge">💰 Best Budget</div>
               </div>
 
               <div className="cta-wrapper">
-                <a href="https://us.satisfyer.com/us/satisfyer-pro-2-generation-2" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
+                <a href="https://us.satisfyer.com/us/satisfyer-wand-er-woman" className="cta-btn secondary" target="_blank" rel="noopener" onClick={() => { if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); }}>See Price →</a>
               </div>
             </div>
           </div>
@@ -491,7 +491,7 @@ export default function Home() {
         <div className="verdict-section" ref={verdictRef}>
           <h2>The Final Verdict</h2>
           <img className="verdict-product-img" src={LOLLY_VERDICT_IMG} alt="Nancy's Lolly Mini Wand" />
-          <p>Every product on this list has its merits. The Satisfyer Pro 2 is unbeatable on price. The Le Wand Petite is a luxury experience. The Tango X is an engineering marvel. Different bodies, different preferences, different budgets — there's no single "right" answer.</p>
+          <p>Every product on this list has its merits. The Satisfyer Wand-er Woman is unbeatable on price. The Le Wand Petite is a luxury experience. The Tango X is an engineering marvel. Different bodies, different preferences, different budgets — there's no single "right" answer.</p>
           <p>But if we're being honest? One product consistently outperformed the rest across every metric that actually matters: power, noise level, design, portability, and value. The Lolly by Nancy isn't just good for $69 — it's good, period. It held its own against products costing twice as much and beat several of them outright.</p>
           <p style={{fontStyle:'italic', color:'var(--text-primary)', fontWeight:500}}>If you're only going to buy one, you already know which one we'd pick.</p>
 
