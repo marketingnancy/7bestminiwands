@@ -2241,3 +2241,105 @@ a.cta-btn:active, a.sticky-cta-btn:active { transform: scale(0.97); }
   .article-body { padding-top: 32px; }
   .article-body .short-copy p + p { margin-top: 12px; }
 }
+
+/* Pasted content 5: contained comparison table and inline trust details. */
+@media (min-width: 600px) {
+  /* The five-column table remains fully visible within its existing container. */
+  .top-comparison-section .top-comparison-table-wrapper {
+    overflow-x: hidden;
+  }
+
+  .top-comparison-section .top-comparison-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 12.5px;
+  }
+
+  .top-comparison-section .top-comparison-table :is(th, td) {
+    min-width: 0;
+    padding: 9px 8px;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .top-comparison-section .top-comparison-table thead th {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .top-comparison-section .top-comparison-table tbody th {
+    padding: 9px 8px;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(1) { width: 24%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(2) { width: 11%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(3) { width: 15%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(4) { width: 18%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(5) { width: 32%; }
+
+  .article-preface .trust-bar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 6px 10px;
+  }
+
+  .article-preface .trust-item {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    color: inherit;
+    font-size: 12.5px;
+    line-height: 1.45;
+    white-space: nowrap;
+  }
+
+  .article-preface .trust-divider {
+    flex: 0 0 auto;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 599px) {
+  /* On small screens, the wrapper alone owns the deliberate table scroll. */
+  .top-comparison-section .top-comparison-table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .top-comparison-section .top-comparison-table {
+    width: 620px;
+    min-width: 620px;
+    table-layout: fixed;
+  }
+
+  .top-comparison-section .top-comparison-table :is(th, td) {
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .article-preface .trust-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 0;
+  }
+
+  .article-preface .trust-item {
+    display: block;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .article-preface .trust-divider {
+    display: none;
+  }
+}

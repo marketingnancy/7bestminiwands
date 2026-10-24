@@ -14,21 +14,21 @@ type CustomerReview = { text: string; name: string; verified: boolean; rating: n
 const APPROVED_REVIEWS: CustomerReview[] = [];
 
 const COMPETITORS = [
-  { id: "product-2", name: "Hitachi Magic Wand Mini", price: "$90", speeds: "3", waterproof: "unknown", verdict: "Legacy name", badge: "Legacy Name", badgeClass: "badge-legacy", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg", good: "Strong motor and a name everyone knows.", lost: "Only 3 speeds and a clinical look. Lolly does more for $21 less." },
+  { id: "product-2", name: "Hitachi Magic Wand Mini", tableName: "Hitachi Mini", price: "$90", speeds: "3", waterproof: "unknown", verdict: "Legacy name", badge: "Legacy Name", badgeClass: "badge-legacy", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg", good: "Strong motor and a name everyone knows.", lost: "Only 3 speeds and a clinical look. Lolly does more for $21 less." },
   { id: "product-3", name: "Le Wand Petite", price: "$145", speeds: "10", waterproof: "unknown", verdict: "Premium, pricey", badge: "Premium Pick", badgeClass: "badge-luxury", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg", good: "Gorgeous build, 10 speeds, deep rumble.", lost: "More than double the price for a difference I struggled to feel." },
-  { id: "product-4", name: "Satisfyer Wand-er Woman", price: "$50", speeds: "50 combos", waterproof: "unknown", verdict: "Budget, not mini", badge: "Best Budget", badgeClass: "badge-budget", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/MRuxybfbMPvwpuMA.jpg", good: "Cheapest full-size option with a strong motor.", lost: "It's heavy and buzzy, and honestly not a mini at all." },
+  { id: "product-4", name: "Satisfyer Wand-er Woman", tableName: "Satisfyer Wand-er", price: "$50", speeds: "50 combos", waterproof: "unknown", verdict: "Budget, not mini", badge: "Best Budget", badgeClass: "badge-budget", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/MRuxybfbMPvwpuMA.jpg", good: "Cheapest full-size option with a strong motor.", lost: "It's heavy and buzzy, and honestly not a mini at all." },
   { id: "product-5", name: "Dame Pom", price: "$99", speeds: "5", waterproof: "unknown", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg", good: "Beautiful, palm sized, soft silicone.", lost: "Even the top setting felt like not quite enough." },
   { id: "product-6", name: "Maude Vibe", price: "$52", speeds: "3", waterproof: "resistant", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg", good: "Pretty enough to leave on the nightstand.", lost: "3 speeds, no patterns, and only water resistant." },
   { id: "product-7", name: "We-Vibe Tango X", price: "$159", speeds: "8", waterproof: "ipx7", verdict: "Bullet, not a wand", badge: "Compact Powerhouse", badgeClass: "badge-powerhouse", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg", good: "An excellent bullet with IPX7 waterproofing.", lost: "It's a bullet, not a wand, and costs more than twice as much." },
 ];
 
 const FAQS = [
-  { q: "How did you test these products?", a: "Each product was tested over three weeks by our editorial team. We evaluated power, noise level, battery life, build quality, ease of cleaning, and overall user experience. We also analyzed thousands of verified buyer reviews across multiple retailers to cross-reference our findings." },
-  { q: "Why is the Lolly ranked #1 over more expensive options?", a: "Price-to-performance ratio. In blind testing, the Lolly matched or exceeded products costing 2-3x more across every key metric. The deep rumbly vibrations, whisper-quiet motor, and fully waterproof design put it in a class that typically costs $120+. At $69, it's the best value we've found." },
-  { q: "Is the Lolly beginner-friendly?", a: "One of the best starter options we've tested. The 10 settings give you a huge range from super gentle to intense, so you can start low and explore at your own pace. The controls are dead simple: one button, press to cycle. It's small, non-intimidating, and discreet." },
-  { q: "Can I use the Lolly in the shower?", a: "Yes! Lolly is fully waterproof (IPX7 certified), so feel free to take it into the shower or bath. Just make sure to dry it thoroughly before charging." },
-  { q: "What if I buy it and don't like it?", a: "Nancy offers a 30-day satisfaction guarantee, so you can try it essentially risk-free. They also have a 12-month warranty on defects and responsive customer service. Multiple buyers specifically called this out in their reviews." },
-  { q: "Is the packaging discreet?", a: "Completely. Plain box, no branding, no product descriptions, nothing on the outside that gives it away. The billing statement is discreet too." },
+  { q: "How did you test these products?", a: "I used each one for three weeks and compared power, noise, comfort, ease of cleaning and value. I also read through public reviews for each product to check my impressions against other buyers." },
+  { q: "Why is the Lolly ranked #1 over more expensive options?", a: "Price to performance. Lolly held its own against wands costing two to three times more. Deep, rumbly vibrations, a quiet motor and IPX7 waterproofing at $69 is the best value I found." },
+  { q: "Is the Lolly beginner-friendly?", a: "One of the best starter options I've tested. The 10 patterns and intensities give you a huge range from super gentle to intense, so you can start low and explore at your own pace. It's small, non-intimidating, and discreet." },
+  { q: "Can I use the Lolly in the shower?", a: "Yes. Lolly is fully waterproof (IPX7), so it's safe in the shower or bath and easy to rinse clean afterwards. Just dry it thoroughly before charging." },
+  { q: "What if I buy it and don't like it?", a: "Unopened, you can return it within 30 days for a full refund. Opened, Hello Nancy's Pleasure Guarantee lets you exchange it once for a different product within 30 days (one exchange per customer). If it's ever defective, the 12-month warranty covers a replacement." },
+  { q: "Is the packaging discreet?", a: "Yes. Standard shipping uses a plain outer box. If you want extra privacy, you can add unmarked packaging with neutral shipping labels at checkout." },
 ];
 
 declare global {
@@ -132,7 +132,7 @@ function BenefitsRow() {
 }
 
 function GuaranteeNote() {
-  return <ShortCopy className="guarantee-note" text="Opened products qualify for a one-time exchange within 30 days. Refunds apply to unopened products. Standard outer packaging is plain; a neutral-label upgrade costs extra." />;
+  return <ShortCopy className="guarantee-note" text="Unopened products can be returned within 30 days for a full refund. Opened products qualify for a one-time exchange within 30 days. Standard outer packaging is plain; unmarked packaging with neutral labels is available at checkout." />;
 }
 
 function LollyLink({ children, className = "cta-btn" }: { children: React.ReactNode; className?: string }) {
@@ -192,7 +192,7 @@ export default function Home() {
       <p className="hero-dateline">Updated October 2026</p>
       <div className="hero-meta">
         <div className="author-avatar"><AuthorAvatar /></div>
-        <div className="author-info"><div className="author-name">Mia Sinclair</div><div className="author-date">October 24, 2026 · 12 min read</div></div>
+        <div className="author-info"><div className="author-name">Mia Sinclair</div><div className="author-date">October 24, 2026 · 4 min read</div></div>
       </div>
       <div className="hero-image" ref={heroImageRef}>
         <img src={LOLLY_HERO_IMG} alt="Lolly by Nancy, a pink lollipop-shaped mini wand" fetchPriority="high" decoding="async" />
@@ -205,7 +205,7 @@ export default function Home() {
         <LollyLink>Get the Lolly →</LollyLink>
       </aside>
       <div className="affiliate-disclosure"><ShortCopy text={SPONSOR_DISCLOSURE} /></div>
-      <div className="trust-bar"><span aria-hidden="true">📦</span><span>Discreet shipping on every pick</span></div>
+      <div className="trust-bar"><span className="trust-item">★ {LOLLY_RATING}/5 from {LOLLY_REVIEW_COUNT} Lolly reviews</span><span className="trust-divider" aria-hidden="true">·</span><span className="trust-item">📦 Free discreet shipping</span><span className="trust-divider" aria-hidden="true">·</span><span className="trust-item">🔒 30-day guarantee</span></div>
     </div>
 
     <section className="top-comparison-section" aria-label="Compare all seven products">
@@ -214,7 +214,7 @@ export default function Home() {
           <thead><tr><th scope="col">Product</th><th scope="col">Price</th><th scope="col">Speeds</th><th scope="col">Waterproof</th><th scope="col">Verdict</th></tr></thead>
           <tbody>
             <tr className="highlighted-row"><th scope="row">Lolly by Nancy</th><td>$69</td><td>10</td><td><span className="table-check">✓</span> IPX7</td><td>🏆 Editor's Pick</td></tr>
-            {COMPETITORS.map(p => <tr key={p.id}><th scope="row">{p.name}</th><td>{p.price}</td><td>{p.speeds}</td><td>{p.waterproof === "ipx7" ? <><span className="table-check">✓</span> IPX7</> : p.waterproof === "resistant" ? <><span className="table-x">✗</span> water resistant only</> : <span className="table-meh">Not listed</span>}</td><td>{p.verdict}</td></tr>)}
+            {COMPETITORS.map(p => <tr key={p.id}><th scope="row">{p.tableName ?? p.name}</th><td>{p.price}</td><td>{p.speeds}</td><td>{p.waterproof === "ipx7" ? <><span className="table-check">✓</span> IPX7</> : p.waterproof === "resistant" ? <><span className="table-x">✗</span> water resistant only</> : <span className="table-meh">Not listed</span>}</td><td>{p.verdict}</td></tr>)}
           </tbody>
         </table>
       </div>
@@ -230,7 +230,7 @@ export default function Home() {
                 <span className="product-badge badge-winner">🏆 Editor's Pick</span>
                 <h2 className="product-title" id="lolly-title"><span className="rank">#1</span> Lolly by Nancy</h2>
                 <div className="product-rating"><LollyStars /><span className="rating-score">{LOLLY_RATING}/5 ({LOLLY_REVIEW_COUNT} reviews)</span></div>
-                <div className="product-price">$69</div>
+                <div className="product-price">$69 <span className="original">$139</span></div>
               </div>
             </div>
             <div className="product-body">
@@ -239,9 +239,9 @@ export default function Home() {
               <div className="feature-grid">
                 <div className="feature-card"><span className="feature-icon" aria-hidden="true">🌊</span><h3>Deep, not buzzy</h3><ShortCopy text="Low, rumbly vibrations you feel deep. None of that surface buzz that leaves your fingers numb." /></div>
                 <div className="feature-card"><span className="feature-icon" aria-hidden="true">🤫</span><h3>Roommate quiet</h3><ShortCopy text="My roommate was one wall away. She had no clue." /></div>
-                <div className="feature-card"><span className="feature-icon" aria-hidden="true">✋</span><h3>Still handle</h3><ShortCopy text="Only the head vibrates. Cheaper wands buzz your whole hand along with it." /></div>
+                <div className="feature-card"><span className="feature-icon" aria-hidden="true">💦</span><h3>Shower ready</h3><ShortCopy text="IPX7 waterproof, so it goes in the shower or bath and rinses clean after." /></div>
               </div>
-              <div className="spec-strip" aria-label="Lolly specifications">{["10 modes", "IPX7 waterproof", "Flexible head", "One button"].map(spec => <span className="spec-pill" key={spec}>{spec}</span>)}</div>
+              <div className="spec-strip" aria-label="Lolly specifications">{["10 modes", "IPX7 waterproof", "Flexible head", "Body-safe silicone", "USB rechargeable"].map(spec => <span className="spec-pill" key={spec}>{spec}</span>)}</div>
               <blockquote className="lolly-pullquote">I've never made it past setting 7. That's a compliment.</blockquote>
               <ShortCopy text="Setting 1 is for easing in. By 6 or 7 you're somewhere else entirely. Settings 9 and 10 are still a mystery to me, and I'm fine with that." />
               <h3 className="disguise-heading">The lollipop disguise is low key genius</h3>
@@ -283,7 +283,7 @@ export default function Home() {
         <h2 id="verdict-heading">The Final Verdict</h2>
         <ShortCopy text="Every wand here has its fans. But only one nailed power, quiet, discretion and price all at once. If you're buying one mini wand this year, make it Lolly." />
         <img className="verdict-product-img" src={LOLLY_HERO_IMG} alt="Lolly by Nancy" width="180" loading="lazy" decoding="async" />
-        <div ref={verdictCtaRef}><LollyLink>Try the Lolly Risk-Free for 30 Days →</LollyLink></div>
+        <div ref={verdictCtaRef}><LollyLink>Get the Lolly for $69 →</LollyLink></div>
         <BenefitsRow /><GuaranteeNote />
       </section>
 

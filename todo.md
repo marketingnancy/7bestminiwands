@@ -1,18 +1,15 @@
-# October 2026 sponsored editorial update
+# Follow-up revision: pasted_content_5.txt
 
-## Plan
-Preserve the cream, coral and typography design system while applying pasted_content_4.txt. Verify missing review evidence and launch pricing on Hello Nancy. Rebuild the article in the specified order, retain FAQ/author/header/footer, and validate desktop/mobile behavior before saving a publishable checkpoint.
+Apply only the new brief to checkpoint cd27f942. Preserve all unrelated design, images, content and tracking. The previous checkpoint is published on the live domain.
 
-- [x] Inspect existing page, styles, SEO and image references.
-- [x] Verify Lolly image, current pricing, review rating/count and real customer-review evidence. Official product aggregate is 4.7/5 from 296 reviews. Launch wording is unsupported; show $69 only.
-- [x] Apply sponsorship disclosure, October dates, three-week testing copy and global copy rules.
-- [x] Implement hero image, hurry box, scrollable comparison table, Lolly feature deep dive and compact competitors.
-- [ ] Insert three approved verified reviews. The brief includes placeholders; a deferred user question requests actual text or approval to select verified official reviews. Review component remains hidden until approval.
-- [x] Remove unsupported competitor ratings/quotes instead of inventing replacement scores.
-- [x] Keep only Lolly outbound destination, preserve CTA tracking. No pre-existing UTMs were present.
-- [x] Update verdict and mobile sticky CTA intersection behavior.
-- [x] Preserve FAQ, author biography, header/footer and SEO except required dates/global copy/rating cleanup. Add current guarantee/packaging-policy qualifications.
-- [x] Test build, TypeScript, 375px layout, paragraph line counts, all image decoding, links and sticky CTA behavior. Desktop checks pass; no JavaScript errors.
-- [x] Write full change list in docs/october-2026-changelog.md.
-- [x] Prepare tested final contents for the publishable checkpoint.
-- [ ] Publish via the website Publish control. No deploy tool is available in this session; do not claim the existing live domain has the updated version without verification.
+- [x] Replace the final CTA with Get the Lolly for $69 and remove prohibited trial wording from all page content.
+- [x] Replace both fine-print instances with the exact supplied refund/exchange/packaging text. Preserve 30-day guarantee badges.
+- [x] Replace all six FAQ answers word for word and synchronize all six FAQ structured-data answers.
+- [x] Restore $69 with struck-through $139 in the Lolly card header only.
+- [x] Replace Still handle with Shower ready; update the five specified pills; remove unsupported handle/control language from product metadata.
+- [x] Add the three-item trust strip and change read time to four minutes.
+- [x] Shorten the two table-only names, reduce padding, wrap cells and make the complete table fit at every viewport from 600px upward. Enable inner table scrolling only below 600px.
+- [x] Verify exact FAQ and fine-print copy, all five pills, price strikethrough, excluded characters/wording, eight widths from 375px to 1440px, images, Lolly-only links, FAQ interaction and sticky CTA timing. TypeScript, production build and whitespace checks pass.
+- [x] Prepare the tested final project contents for a publishable checkpoint.
+- [ ] Add three real approved reviews. The new attachment again contains a placeholder, not the review texts. Existing three-card section remains hidden until actual reviews are supplied or selection is explicitly approved.
+- [ ] Publish the new checkpoint through the website Publish control. No deployment action is exposed in this session; verify the live domain before claiming this follow-up is live.
