@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ========================================
-   The Velvet Edit — Landing Page Styles
+   The Velvet Edit: Landing Page Styles
    Design: Warm cream editorial magazine
    Fonts: Instrument Serif + DM Sans
    ======================================== */
@@ -1287,3 +1287,957 @@ a.sticky-cta-btn:hover {
 
 /* Extra bottom padding for sticky bar */
 body.sticky-active { padding-bottom: 72px; }
+
+
+/* ========================================
+   October 2026 editorial article overrides
+   ======================================== */
+
+/* Keep the editorial canvas contained while allowing only intended inner scrollers. */
+html,
+body {
+  overflow-x: clip;
+}
+
+.site-nav {
+  overflow-x: clip;
+}
+
+.nav-inner,
+.nav-logo {
+  min-width: 0;
+}
+
+.hero::before {
+  left: 0;
+  right: 0;
+}
+
+/* Header and preface */
+.sponsored-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.sponsored-label + .hero-category {
+  margin-top: 0;
+}
+
+.hero {
+  max-width: 728px;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 680px;
+  margin: 28px auto 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--warm-white);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-image-inner {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: inherit;
+}
+
+.short-copy p {
+  color: var(--text-secondary);
+  margin: 0 0 1em;
+}
+
+.short-copy > :last-child {
+  margin-bottom: 0;
+}
+
+.hero-subtitle.short-copy p {
+  max-width: inherit;
+  margin-bottom: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+}
+
+.article-preface,
+.top-comparison-section,
+.article-body {
+  width: 100%;
+  max-width: 728px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.article-preface {
+  margin-top: 28px;
+}
+
+.article-preface > *,
+.article-body > .article-inner {
+  width: 100%;
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.article-body {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+.hurry-box {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 18px;
+  padding: 20px 22px;
+  color: var(--text-secondary);
+  background: #FFF7F5;
+  border: 1px solid #F3D6D1;
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+}
+
+.hurry-box-title,
+.hurry-box h2,
+.hurry-box h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.hurry-box a:not(.cta-btn) {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.hurry-box .short-copy p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.article-preface .trust-bar {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 9px 0;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.article-preface .trust-bar .trust-divider {
+  display: inline;
+}
+
+/* Comparison table: its wrapper is the sole horizontal overflow region. */
+.top-comparison-section {
+  margin-top: 32px;
+  overflow: visible;
+}
+
+.top-comparison-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.top-comparison-table {
+  width: 100%;
+  min-width: 780px;
+}
+
+.table-check {
+  color: var(--badge-green);
+}
+
+.table-x {
+  color: #A8A29A;
+}
+
+/* Article type and Lolly winner presentation */
+.section-heading {
+  margin: 48px 0 12px;
+  color: var(--text-primary);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.35px;
+  line-height: 1.2;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent-dark);
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.product-card.winner .product-content {
+  padding: 32px;
+}
+
+.winner-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.winner-thumbnail {
+  display: block;
+  width: 110px;
+  height: 110px;
+  flex: 0 0 110px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--cream);
+  object-fit: contain;
+}
+
+.winner-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.winner-header .product-header {
+  min-width: 0;
+  flex: 1;
+}
+
+.product-card.winner .product-image-area {
+  display: none;
+}
+
+.lolly-opening {
+  margin: 24px 0 18px;
+  color: var(--accent-dark);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+}
+
+/* Lolly detail modules */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.feature-card {
+  padding: 18px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.feature-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+  color: var(--accent-dark);
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-light);
+  font-size: 16px;
+}
+
+.feature-card h3 {
+  margin: 0 0 7px;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.feature-card .short-copy p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.spec-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.spec-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  color: var(--text-secondary);
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.lolly-pullquote {
+  position: relative;
+  max-width: 620px;
+  margin: 38px auto;
+  padding: 0 22px;
+  color: var(--accent-dark);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.45px;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.lolly-pullquote::before,
+.lolly-pullquote::after {
+  color: var(--accent);
+  font-size: 1.2em;
+  line-height: 0;
+}
+
+.lolly-pullquote::before {
+  content: '“';
+  margin-right: 4px;
+}
+
+.lolly-pullquote::after {
+  content: '”';
+  margin-left: 4px;
+}
+
+.disguise-heading {
+  margin: 34px 0 14px;
+  color: var(--text-primary);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.check-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.check-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 46px;
+  padding: 9px 12px;
+  color: var(--badge-green);
+  background: var(--badge-green-bg);
+  border: 1px solid #CFE8D9;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.benefits-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 20px 0;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.benefit-icon {
+  color: var(--accent-dark);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.guarantee-note {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Customer reviews */
+.review-section {
+  margin: 44px 0;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.customer-review-card {
+  padding: 20px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.customer-review-card .rating-stars {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.customer-review-card .short-copy p {
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.reviewer-name {
+  display: block;
+  margin-top: 14px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reviewer-verified {
+  display: block;
+  margin-top: 2px;
+  color: var(--badge-green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Competitor cards */
+.competitor-list {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.competitor-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.competitor-image {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.competitor-copy {
+  min-width: 0;
+}
+
+.competitor-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.competitor-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.competitor-price {
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.product-badge.badge-letdown {
+  color: #6F6B66;
+  background: #ECE9E5;
+}
+
+.competitor-detail {
+  margin-top: 10px;
+}
+
+.competitor-detail .detail-label {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.competitor-detail .short-copy {
+  display: inline;
+}
+
+.competitor-detail .short-copy p {
+  display: inline;
+  margin: 0;
+}
+
+/* Preserve the pink verdict, with purchase action before its supporting benefits. */
+.verdict-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.verdict-section > h2,
+.verdict-section > p,
+.verdict-section > .verdict-product-img {
+  order: 1;
+}
+
+.verdict-section > .cta-wrapper {
+  order: 2;
+}
+
+.verdict-section > .verdict-perks,
+.verdict-section > .benefits-row,
+.verdict-section > .guarantee-note {
+  order: 3;
+}
+
+.verdict-product-img {
+  width: 180px;
+}
+
+/* FAQ state is owned by the component; CSS only styles its visible answer. */
+button.faq-q,
+.faq-q {
+  display: block;
+  width: 100%;
+  padding: 20px 32px 20px 0;
+  color: var(--text-primary);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.faq-a {
+  max-height: none;
+  overflow: visible;
+  padding: 0 0 20px;
+}
+
+.faq-a[hidden] {
+  display: none !important;
+}
+
+.faq-a .short-copy p {
+  margin-bottom: 0;
+}
+
+/* The compact CTA is deliberately a mobile-only affordance. */
+.sticky-cta {
+  display: none;
+}
+
+body.sticky-active {
+  padding-bottom: 0;
+}
+
+/* Keyboard and motion safeguards */
+:where(a, button, [role='button'], input, select, textarea, summary):focus-visible {
+  outline: 3px solid rgba(232, 133, 122, 0.72);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .article-preface,
+  .top-comparison-section,
+  .article-body {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .hero-image {
+    margin-top: 22px;
+    border-radius: 16px;
+  }
+
+  .article-preface {
+    margin-top: 22px;
+  }
+
+  .article-body {
+    padding-top: 32px;
+    padding-bottom: 60px;
+  }
+
+  /* Only the table wrapper scrolls horizontally on narrow viewports. */
+  .top-comparison-section {
+    overflow: visible;
+  }
+
+  .top-comparison-table-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .top-comparison-table {
+    min-width: 780px;
+  }
+
+  /* Actual reading copy remains comfortably sized; metadata/footer stay compact. */
+  .article-body p,
+  .article-preface .short-copy p,
+  .hurry-box .short-copy p,
+  .product-body p,
+  .product-body ul li,
+  .competitor-copy,
+  .competitor-copy p,
+  .competitor-detail,
+  .faq-a,
+  .faq-a .short-copy p,
+  .review-section .short-copy p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .hero-subtitle.short-copy p {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .section-heading {
+    margin-top: 40px;
+    font-size: 28px;
+  }
+
+  .hurry-box {
+    padding: 18px;
+  }
+
+  .hurry-box-title,
+  .hurry-box h2,
+  .hurry-box h3,
+  .lolly-opening,
+  .disguise-heading {
+    font-size: 24px;
+  }
+
+  .product-card.winner .product-content {
+    padding: 24px 18px;
+  }
+
+  .winner-header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .winner-thumbnail {
+    width: 88px;
+    height: 88px;
+    flex-basis: 88px;
+  }
+
+  .feature-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card .short-copy p,
+  .customer-review-card .short-copy p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .spec-strip {
+    gap: 7px;
+  }
+
+  .spec-pill {
+    white-space: normal;
+  }
+
+  .lolly-pullquote {
+    margin: 30px auto;
+    font-size: 28px;
+  }
+
+  .check-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .check-badge {
+    justify-content: flex-start;
+    font-size: 17px;
+    text-align: left;
+  }
+
+  .benefits-row {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px 16px;
+  }
+
+  .competitor-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .competitor-image {
+    margin: 0 auto;
+  }
+
+  .competitor-copy {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .competitor-topline {
+    align-items: flex-start;
+  }
+
+  .competitor-title {
+    font-size: 24px;
+  }
+
+  .verdict-product-img {
+    width: 180px;
+  }
+
+  .faq-q {
+    font-size: 16px;
+  }
+
+  .faq-a {
+    padding-bottom: 20px;
+  }
+
+  .faq-a .short-copy p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .sticky-cta {
+    display: block;
+    visibility: hidden;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 200ms ease, opacity 200ms ease, visibility 200ms linear;
+  }
+
+  .sticky-cta.visible {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sticky-cta-inner {
+    gap: 12px;
+  }
+
+  .sticky-thumbnail {
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .sticky-cta-copy {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  body.sticky-active {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Component-specific cascade corrections */
+.product-header .product-title {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+.product-body .lolly-opening {
+  color: var(--accent-dark);
+  font-size: 26px;
+  margin: 26px 0 18px;
+}
+.product-body .disguise-heading {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--text-primary);
+}
+.competitor-card .competitor-title {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+  text-transform: none;
+}
+.competitor-detail .detail-label { margin-right: 5px; }
+.check-badges > span {
+  padding: 12px 10px;
+  border: 1px solid #CFE8D9;
+  border-radius: 10px;
+  color: var(--badge-green);
+  background: var(--badge-green-bg);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.precise-stars {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: #DDD5CB;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.precise-stars .stars-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: var(--star);
+}
+.top-comparison-table tbody th {
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 500;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+.top-comparison-table .highlighted-row :is(th, td) {
+  background: #FFF0EE;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.top-comparison-table tbody tr:last-child th { border-bottom: 0; }
+.verdict-section { display: block; }
+.verdict-section h2 { margin-top: 0; }
+.guarantee-note.short-copy p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.article-preface .affiliate-disclosure {
+  margin: 18px 0 8px;
+  padding: 12px 18px;
+  max-width: 100%;
+  width: 100%;
+}
+.affiliate-disclosure .short-copy p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.hurry-box .cta-btn { margin-top: 18px; }
+a.cta-btn:active, a.sticky-cta-btn:active { transform: scale(0.97); }
+.faq-a .short-copy p + p { margin-top: 12px; }
+@media (max-width: 768px) {
+  body { font-size: 17px; line-height: 1.6; }
+  .hero-subtitle { font-size: 17px; line-height: 1.6; }
+  .hero-subtitle .short-copy p { font-size: 17px; }
+  .product-header .product-title { font-size: 24px; }
+  .winner-header { flex-direction: column; gap: 16px; }
+  .product-header .product-rating { flex-wrap: wrap; gap: 6px 10px; }
+  .product-header .rating-score { font-size: 14px; }
+  .competitor-detail .short-copy, .competitor-detail .short-copy p { display: block; }
+  .competitor-detail .detail-label { display: block; }
+  .check-badges > span { font-size: 17px; }
+  .top-comparison-table tbody th { padding: 8px 10px; font-size: 12px; }
+  .affiliate-disclosure .short-copy p { font-size: 12.5px; }
+  .guarantee-note.short-copy p { font-size: 13px; }
+  .benefits-row { justify-content: center; }
+  .product-card.winner { margin-top: 0; }
+  .article-body { padding-top: 32px; }
+  .article-body .short-copy p + p { margin-top: 12px; }
+}
