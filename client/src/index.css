@@ -2414,3 +2414,30 @@ a.comparison-product-link:hover { color: var(--accent-dark); }
   border-radius: 16px;
   margin: 24px 0;
 }
+
+/* Fast hero fallback and approved customer-review details. */
+.hero .hero-image {
+  background: #FDB913;
+}
+.hero .hero-image img {
+  background: transparent;
+}
+.article-body .reviews-source-note {
+  margin: 8px 0 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.article-body a.reviews-all-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.review-section .customer-review-card {
+  display: flex;
+  flex-direction: column;
+}
+.review-section .customer-review-card figcaption {
+  margin-top: auto;
+}

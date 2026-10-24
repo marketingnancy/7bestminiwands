@@ -1,17 +1,19 @@
-# Hero image swap and old photo relocation
+# Thumbnail, hero performance and approved reviews
 
-Preserve checkpoint ce3563e0 except for the requested hero image, social metadata, centered 4:3 presentation and relocated hand photo. Do not reopen the attached source image with the file-reading tool.
+Preserve checkpoint 0a4fd2a9 except for the requested clean Lolly thumbnail, optimized hero/preload/yellow fallback and the three now-supplied customer reviews.
 
-- [x] Confirm the existing yellow-background thumbnail matches the attachment using pixel data only (800px CDN rendition vs 1000px source, RMSE 1.121). Reuse its existing image URL; no source-image file viewing or generated image required.
-- [x] Replace hero source and exact alt text, explicit eager loading and high fetch priority. Apply centered cover crop 4:3 at every viewport, maximum width 680px. Preserve rounded corners and existing soft shadow.
-- [x] Set og:image and twitter:image to the new hero asset; update OG dimensions to the real 800px square source.
-- [x] Insert old pink hand photo immediately after the three test badges and before the Le Wand comparison paragraph. Full inner-card width, rounded centered 4:3 crop, lazy loading and exact requested alt. Preserve original asset and unchanged verdict rendering.
-- [x] Verify DOM order, meta/source equality, eager/lazy attributes, cover/center styles, 4:3 dimensions and no page overflow at 375, 600, 768 and 1280px. Desktop hero is 680x510; mobile hero is 339x254.25. Mobile hurry box begins 22px after the hero at document Y762.47.
-- [x] Re-run image-loading, FAQ, mobile paragraph and sticky CTA regression checks. All pass, with no uncaught JavaScript errors.
-- [x] Capture and visually verify top-of-page screenshots at 1280x1200 and 375x1000. Verify both PNG files are complete and nonempty.
-- [x] Run TypeScript, production build, scoped source diff and whitespace checks. All pass. Prepare final contents for a publishable checkpoint.
-- [ ] Publish the latest checkpoint through the website Publish control and verify the live domain. This session exposes no direct deployment operation; current live OG image remains the previous image until publication.
+- [x] Find a distinct clean official Lolly packshot (LOL_3.png on the official product page) and replace only the card thumbnail. Use a 320px WebP, 2,350 bytes, uploaded through supported WebDev storage.
+- [x] Replace the 843,765-byte hero PNG with the matching original 1000px-square WebP, 13,988 bytes, well below the 1360px/150KB limits. Preserve the photo and centered 4:3 displayed crop without reopening the prior attachment visually.
+- [x] Add exact-source high-priority image preload to the HTML head; preserve eager/high-priority hero loading and set the fallback to #FDB913. Synchronize social image URLs and source dimensions.
+- [x] Add the official development-only Vite storage proxy required by this older preview template. Production storage routing already serves both WebP files; no production backend code changed.
+- [x] Insert Amber N., Lila M. and Daniel C. reviews word for word with their original punctuation, enclosing quotation marks, five gold stars and the requested verified-customer labels.
+- [x] Place the review section directly after the Lolly card and before competitors. Add exact heading, grey source subheading and Read all 296 reviews link to the official Lolly page. Keep the existing aggregate rating.
+- [x] Verify review text/names/stars/labels, section placement, three desktop columns/stacked mobile layout and aligned desktop attribution. Verify preload/source equality and one hero request, loaded distinct thumbnail, actual WebP asset bytes/dimensions, centered 4:3 crop and yellow placeholder while the hero is deliberately delayed.
+- [x] Verify images, mobile paragraphs, FAQ interaction, unchanged sticky CTA behavior, TypeScript, production build and whitespace. All pass with no JavaScript errors.
+- [x] Capture and visually verify complete, unobstructed review-section screenshots from desktop and 375px mobile viewports. Verify final PNG files and freeze deliverables under fresh names.
+- [x] Prepare the tested final project for a publishable checkpoint.
+- [ ] Publish the latest checkpoint via the website Publish control and verify the live domain. This session exposes no direct deploy operation.
 
-Requested screenshot deliverables:
-- /home/ubuntu/velvet-edit-qa/hero-swap-desktop.png
-- /home/ubuntu/velvet-edit-qa/hero-swap-mobile-375.png
+Final screenshot deliverables:
+- /home/ubuntu/velvet-edit-qa/reviews-desktop-final.png
+- /home/ubuntu/velvet-edit-qa/reviews-mobile-final-375.png

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
+const LOLLY_CARD_IMG = "/manus-storage/lolly-card-packshot-a6a46103f9_066a2fc5.webp";
+const LOLLY_HERO_IMG = "/manus-storage/lolly-hero-36b9fd7443_07d89ce9.webp";
 const LOLLY_HAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
 const AUTHOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/egnMscS7ogC6ZmyokR2ext/mia-sinclair-v2-CiYiDeLaAXiEJpSNmcgWAW.webp";
 const LOLLY_URL = "https://hellonancy.com/products/lolly-mini-wand";
@@ -9,9 +11,13 @@ const LOLLY_REVIEW_COUNT = 296;
 const SPONSOR_DISCLOSURE = "This article is sponsored by Hello Nancy, the maker of Lolly. Picks reflect hands-on use and publicly available product info.";
 
 // Only add reviews approved by the user and backed by the official product page.
-// The supplied brief contains placeholders, not actual approved review text.
+// Preserve the user-supplied customer quotes and punctuation exactly.
 type CustomerReview = { text: string; name: string; verified: boolean; rating: number };
-const APPROVED_REVIEWS: CustomerReview[] = [];
+const APPROVED_REVIEWS: CustomerReview[] = [
+  { name: "Amber N.", text: "It takes a lot for me to \"get there\". But not with this! I love it so much I have 2 now! I'd buy more if I could.", verified: true, rating: 5 },
+  { name: "Lila M.", text: "My first vibe - highly recommend. Super soft material, lovely packaging. Lots of different settings too.", verified: true, rating: 5 },
+  { name: "Daniel C.", text: "Good little lollipop. Love how easy it is to take on trips.", verified: true, rating: 5 },
+];
 
 const COMPETITORS = [
   { id: "product-2", name: "Hitachi Mini", tableName: "Hitachi Mini", price: "Varies", tablePrice: "Varies by retailer", speeds: "3", waterproof: "unknown", verdict: "Legacy name", badge: "Legacy Name", badgeClass: "badge-legacy", url: "https://magicwandoriginal.com/mini/", buttonLabel: "View on Magic Wand →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg", good: "Deep, rumbly motor and a name everyone knows.", lost: "Only 3 speeds and a clinical look. Lolly gives you 10." },
@@ -195,7 +201,7 @@ export default function Home() {
         <div className="author-info"><div className="author-name">Mia Sinclair</div><div className="author-date">October 24, 2026 · 4 min read</div></div>
       </div>
       <div className="hero-image" ref={heroImageRef}>
-        <img src={LOLLY_IMG} alt="Lolly by Nancy pink mini wand on a yellow background surrounded by lollipops" width="800" height="800" loading="eager" fetchPriority="high" decoding="async" />
+        <img src={LOLLY_HERO_IMG} alt="Lolly by Nancy pink mini wand on a yellow background surrounded by lollipops" width="1000" height="1000" loading="eager" fetchPriority="high" decoding="async" />
       </div>
     </header>
 
@@ -226,7 +232,7 @@ export default function Home() {
         <div className="product-card winner" id="product-1">
           <div className="product-content">
             <div className="winner-header">
-              <img className="winner-thumbnail" src={LOLLY_IMG} alt="Lolly Mini Wand" width="110" height="110" loading="lazy" decoding="async" />
+              <img className="winner-thumbnail" src={LOLLY_CARD_IMG} alt="Lolly Mini Wand" width="110" height="110" loading="lazy" decoding="async" />
               <div className="product-header">
                 <span className="product-badge badge-winner">🏆 Editor's Pick</span>
                 <h2 className="product-title" id="lolly-title"><span className="rank">#1</span> Lolly by Nancy</h2>
@@ -260,12 +266,14 @@ export default function Home() {
 
       {APPROVED_REVIEWS.length > 0 && <section className="review-section" aria-labelledby="owners-heading">
         <h2 className="section-heading" id="owners-heading">What Lolly owners are saying</h2>
+        <p className="reviews-source-note">Real reviews from hellonancy.com</p>
         <div className="product-rating"><LollyStars /><span className="rating-score">{LOLLY_RATING}/5 from {LOLLY_REVIEW_COUNT} reviews</span></div>
         <div className="review-grid">{APPROVED_REVIEWS.map(review => <figure className="customer-review-card" key={review.name}>
           <div className="rating-stars" role="img" aria-label={`${review.rating} out of 5 stars`}>★★★★★</div>
-          <blockquote><ShortCopy text={review.text} /></blockquote>
+          <blockquote><ShortCopy text={`“${review.text}”`} /></blockquote>
           <figcaption><div className="reviewer-name">{review.name}</div>{review.verified && <div className="reviewer-verified">Verified Hello Nancy customer</div>}</figcaption>
         </figure>)}</div>
+        <a className="reviews-all-link" href={LOLLY_URL} target="_blank" rel="noopener noreferrer sponsored">Read all 296 reviews →</a>
       </section>}
 
       <section aria-labelledby="competitors-heading">
