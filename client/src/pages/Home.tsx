@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const LOLLY_IMG = "https://hellonancy.com/cdn/shop/files/LOL1_eb49dfb5-0b1b-438d-b41e-dd27c75f2120.png?v=1762422962&width=800";
-const LOLLY_HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
+const LOLLY_HAND_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/HlPtkxTQBqyhSucH.webp";
 const AUTHOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663037635287/egnMscS7ogC6ZmyokR2ext/mia-sinclair-v2-CiYiDeLaAXiEJpSNmcgWAW.webp";
 const LOLLY_URL = "https://hellonancy.com/products/lolly-mini-wand";
 const LOLLY_RATING = "4.7";
@@ -195,7 +195,7 @@ export default function Home() {
         <div className="author-info"><div className="author-name">Mia Sinclair</div><div className="author-date">October 24, 2026 · 4 min read</div></div>
       </div>
       <div className="hero-image" ref={heroImageRef}>
-        <img src={LOLLY_HERO_IMG} alt="Lolly by Nancy, a pink lollipop-shaped mini wand" fetchPriority="high" decoding="async" />
+        <img src={LOLLY_IMG} alt="Lolly by Nancy pink mini wand on a yellow background surrounded by lollipops" width="800" height="800" loading="eager" fetchPriority="high" decoding="async" />
       </div>
     </header>
 
@@ -249,6 +249,7 @@ export default function Home() {
               <div className="check-badges">
                 <span>✅ Passes the roommate test</span><span>✅ Passes the carry-on test</span><span>✅ Passes the "left it on the bathroom counter" test</span>
               </div>
+              <img className="lolly-hand-photo" src={LOLLY_HAND_IMG} alt="Hand holding the Lolly mini wand against a pink background" width="800" height="600" loading="lazy" decoding="async" />
               <ShortCopy text="Le Wand Petite came closest on feel, but it costs more and isn't made to be submerged. Hitachi has the name, but it feels a decade old. Nothing else matched Lolly on power, quiet and price at the same time." />
               <div className="cta-wrapper"><LollyLink>Get the Lolly for $69 →</LollyLink></div>
               <BenefitsRow /><GuaranteeNote />
@@ -284,7 +285,7 @@ export default function Home() {
       <section className="verdict-section" aria-labelledby="verdict-heading">
         <h2 id="verdict-heading">The Final Verdict</h2>
         <ShortCopy text="Every wand here has its fans. But only one nailed power, quiet, discretion and price all at once. If you're buying one mini wand this year, make it Lolly." />
-        <img className="verdict-product-img" src={LOLLY_HERO_IMG} alt="Lolly by Nancy" width="180" loading="lazy" decoding="async" />
+        <img className="verdict-product-img" src={LOLLY_HAND_IMG} alt="Lolly by Nancy" width="180" loading="lazy" decoding="async" />
         <div ref={verdictCtaRef}><LollyLink>Get the Lolly for $69 →</LollyLink></div>
         <BenefitsRow /><GuaranteeNote />
       </section>
