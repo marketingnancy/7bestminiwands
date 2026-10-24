@@ -2343,3 +2343,51 @@ a.cta-btn:active, a.sticky-cta-btn:active { transform: scale(0.97); }
     display: none;
   }
 }
+
+/* Pasted content 6: secondary competitor links and richer comparison details. */
+.article-body a.competitor-link-btn,
+.article-body a.competitor-link-btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 9px 14px;
+  border: 1px solid #CFC8C0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  box-shadow: none;
+  transition: border-color 160ms, color 160ms, transform 160ms;
+}
+.article-body a.competitor-link-btn:hover {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+.article-body a.competitor-link-btn:active { transform: scale(0.97); }
+a.comparison-product-link,
+a.comparison-product-link:visited {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #CFC8C0;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a.comparison-product-link:hover { color: var(--accent-dark); }
+.comparison-price-note {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (min-width: 600px) {
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(1) { width: 22%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(2) { width: 19%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(3) { width: 17%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(4) { width: 24%; }
+  .top-comparison-section .top-comparison-table :is(thead th, tbody th, tbody td):nth-child(5) { width: 18%; }
+}

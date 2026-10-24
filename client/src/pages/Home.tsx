@@ -14,17 +14,17 @@ type CustomerReview = { text: string; name: string; verified: boolean; rating: n
 const APPROVED_REVIEWS: CustomerReview[] = [];
 
 const COMPETITORS = [
-  { id: "product-2", name: "Hitachi Magic Wand Mini", tableName: "Hitachi Mini", price: "$90", speeds: "3", waterproof: "unknown", verdict: "Legacy name", badge: "Legacy Name", badgeClass: "badge-legacy", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg", good: "Strong motor and a name everyone knows.", lost: "Only 3 speeds and a clinical look. Lolly does more for $21 less." },
-  { id: "product-3", name: "Le Wand Petite", price: "$145", speeds: "10", waterproof: "unknown", verdict: "Premium, pricey", badge: "Premium Pick", badgeClass: "badge-luxury", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg", good: "Gorgeous build, 10 speeds, deep rumble.", lost: "More than double the price for a difference I struggled to feel." },
-  { id: "product-4", name: "Satisfyer Wand-er Woman", tableName: "Satisfyer Wand-er", price: "$50", speeds: "50 combos", waterproof: "unknown", verdict: "Budget, not mini", badge: "Best Budget", badgeClass: "badge-budget", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/MRuxybfbMPvwpuMA.jpg", good: "Cheapest full-size option with a strong motor.", lost: "It's heavy and buzzy, and honestly not a mini at all." },
-  { id: "product-5", name: "Dame Pom", price: "$99", speeds: "5", waterproof: "unknown", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg", good: "Beautiful, palm sized, soft silicone.", lost: "Even the top setting felt like not quite enough." },
-  { id: "product-6", name: "Maude Vibe", price: "$52", speeds: "3", waterproof: "resistant", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg", good: "Pretty enough to leave on the nightstand.", lost: "3 speeds, no patterns, and only water resistant." },
-  { id: "product-7", name: "We-Vibe Tango X", price: "$159", speeds: "8", waterproof: "ipx7", verdict: "Bullet, not a wand", badge: "Compact Powerhouse", badgeClass: "badge-powerhouse", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg", good: "An excellent bullet with IPX7 waterproofing.", lost: "It's a bullet, not a wand, and costs more than twice as much." },
+  { id: "product-2", name: "Hitachi Mini", tableName: "Hitachi Mini", price: "Varies", tablePrice: "Varies by retailer", speeds: "3", waterproof: "unknown", verdict: "Legacy name", badge: "Legacy Name", badgeClass: "badge-legacy", url: "https://magicwandoriginal.com/mini/", buttonLabel: "View on Magic Wand →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/xjIxxVQjnivbdXRR.jpg", good: "Deep, rumbly motor and a name everyone knows.", lost: "Only 3 speeds and a clinical look. Lolly gives you 10." },
+  { id: "product-3", name: "Le Wand Petite", tableName: "Le Wand Petite", price: "$145", tablePrice: "$145 ($87 on sale)", speeds: "10 + 6 patterns", waterproof: "shower", verdict: "Premium, pricey", badge: "Premium Pick", badgeClass: "badge-luxury", url: "https://www.lewandmassager.com/le-wand-petite.html", buttonLabel: "View on Le Wand →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/GEGUcToGBoyEHvhN.jpg", good: "Gorgeous build, 10 intensities, 6 patterns.", lost: "Costs more, and it's shower friendly but not made to be submerged." },
+  { id: "product-4", name: "Satisfyer Wand-er Woman", tableName: "Satisfyer Wand-er", price: "$114", tablePrice: "$114", speeds: "50 combos", waterproof: "ipx7", verdict: "XXL, not mini", badge: "XXL Pick", badgeClass: "badge-budget", url: "https://us.satisfyer.com/us/satisfyer-wand-er-woman", buttonLabel: "View on Satisfyer →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/MRuxybfbMPvwpuMA.jpg", good: "Strong motor, 50 vibration combos, fully waterproof.", lost: "At 674g it's a full-size wand, not a mini, and it costs about $45 more than Lolly." },
+  { id: "product-5", name: "Dame Pom", tableName: "Dame Pom", price: "$103", tablePrice: "$103", speeds: "5 + 5 patterns", waterproof: "yes", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", url: "https://dame.com/products/pom", buttonLabel: "View on Dame →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/nAvEEmOBTLuhxufN.jpg", good: "Beautiful, palm sized, soft silicone.", lost: "Only 5 intensities, and even the top setting felt like not quite enough." },
+  { id: "product-6", name: "Maude Vibe", tableName: "Maude Vibe", price: "$52", tablePrice: "$52", speeds: "3", waterproof: "resistant", verdict: "Letdown", badge: "Letdown", badgeClass: "badge-letdown", url: "https://getmaude.com/products/vibe-personal-massager", buttonLabel: "View on Maude →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/sLlMXxyPcyDkWYLX.jpg", good: "Pretty enough to leave on the nightstand.", lost: "3 speeds, no patterns, and only water resistant." },
+  { id: "product-7", name: "We-Vibe Tango X", tableName: "We-Vibe Tango X", price: "$85", tablePrice: "$85", speeds: "8 + 7 modes", waterproof: "ipx7", verdict: "Bullet, not a wand", badge: "Compact Powerhouse", badgeClass: "badge-powerhouse", url: "https://www.we-vibe.com/us/tango-x", buttonLabel: "View on We-Vibe →", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663037635287/SZKsRTNKjvaTmPqV.jpg", good: "An excellent bullet, IPX7 and whisper quiet.", lost: "It's a bullet, not a wand. You get a small pinpoint tip instead of a broad, rumbly head." },
 ];
 
 const FAQS = [
   { q: "How did you test these products?", a: "I used each one for three weeks and compared power, noise, comfort, ease of cleaning and value. I also read through public reviews for each product to check my impressions against other buyers." },
-  { q: "Why is the Lolly ranked #1 over more expensive options?", a: "Price to performance. Lolly held its own against wands costing two to three times more. Deep, rumbly vibrations, a quiet motor and IPX7 waterproofing at $69 is the best value I found." },
+  { q: "Why is the Lolly ranked #1 over more expensive options?", a: "Price to performance. Lolly held its own against wands that cost more. Deep, rumbly vibrations, a quiet motor and IPX7 waterproofing at $69 is the best value I found." },
   { q: "Is the Lolly beginner-friendly?", a: "One of the best starter options I've tested. The 10 patterns and intensities give you a huge range from super gentle to intense, so you can start low and explore at your own pace. It's small, non-intimidating, and discreet." },
   { q: "Can I use the Lolly in the shower?", a: "Yes. Lolly is fully waterproof (IPX7), so it's safe in the shower or bath and easy to rinse clean afterwards. Just dry it thoroughly before charging." },
   { q: "What if I buy it and don't like it?", a: "Unopened, you can return it within 30 days for a full refund. Opened, Hello Nancy's Pleasure Guarantee lets you exchange it once for a different product within 30 days (one exchange per customer). If it's ever defective, the 12-month warranty covers a replacement." },
@@ -214,10 +214,11 @@ export default function Home() {
           <thead><tr><th scope="col">Product</th><th scope="col">Price</th><th scope="col">Speeds</th><th scope="col">Waterproof</th><th scope="col">Verdict</th></tr></thead>
           <tbody>
             <tr className="highlighted-row"><th scope="row">Lolly by Nancy</th><td>$69</td><td>10</td><td><span className="table-check">✓</span> IPX7</td><td>🏆 Editor's Pick</td></tr>
-            {COMPETITORS.map(p => <tr key={p.id}><th scope="row">{p.tableName ?? p.name}</th><td>{p.price}</td><td>{p.speeds}</td><td>{p.waterproof === "ipx7" ? <><span className="table-check">✓</span> IPX7</> : p.waterproof === "resistant" ? <><span className="table-x">✗</span> water resistant only</> : <span className="table-meh">Not listed</span>}</td><td>{p.verdict}</td></tr>)}
+            {COMPETITORS.map(p => <tr key={p.id}><th scope="row"><a className="comparison-product-link" href={p.url} target="_blank" rel="nofollow noopener noreferrer">{p.tableName}</a></th><td>{p.tablePrice}</td><td>{p.speeds}</td><td>{p.waterproof === "ipx7" ? <><span className="table-check">✓</span> IPX7</> : p.waterproof === "yes" ? <span className="table-check" aria-label="Waterproof">✓</span> : p.waterproof === "shower" ? "Shower only, not submersible" : p.waterproof === "resistant" ? <><span className="table-x">✗</span> water resistant only</> : <span className="table-meh">Not listed</span>}</td><td>{p.verdict}</td></tr>)}
           </tbody>
         </table>
       </div>
+      <p className="comparison-price-note">Prices checked on each brand's official site, October 2026. Prices change often.</p>
     </section>
 
     <main className="article-body">
@@ -248,7 +249,7 @@ export default function Home() {
               <div className="check-badges">
                 <span>✅ Passes the roommate test</span><span>✅ Passes the carry-on test</span><span>✅ Passes the "left it on the bathroom counter" test</span>
               </div>
-              <ShortCopy text="Le Wand Petite came closest on feel, at more than double the price. Hitachi has the name, but it feels a decade old. Nothing else matched Lolly on power, quiet and price at the same time." />
+              <ShortCopy text="Le Wand Petite came closest on feel, but it costs more and isn't made to be submerged. Hitachi has the name, but it feels a decade old. Nothing else matched Lolly on power, quiet and price at the same time." />
               <div className="cta-wrapper"><LollyLink>Get the Lolly for $69 →</LollyLink></div>
               <BenefitsRow /><GuaranteeNote />
             </div>
@@ -275,6 +276,7 @@ export default function Home() {
             <span className={`product-badge ${p.badgeClass}`}>{p.badge}</span>
             <div className="competitor-detail"><span className="detail-label">The good:</span><ShortCopy text={p.good} /></div>
             <div className="competitor-detail"><span className="detail-label">Why it lost:</span><ShortCopy text={p.lost} /></div>
+            <a className="competitor-link-btn" href={p.url} target="_blank" rel="nofollow noopener noreferrer">{p.buttonLabel}</a>
           </div>
         </article>)}</div>
       </section>

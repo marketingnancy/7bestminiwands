@@ -1,15 +1,15 @@
-# Follow-up revision: pasted_content_5.txt
+# Follow-up revision: pasted_content_6.txt
 
-Apply only the new brief to checkpoint cd27f942. Preserve all unrelated design, images, content and tracking. The previous checkpoint is published on the live domain.
+Preserve checkpoint d2ad513e except for the explicitly requested competitor links, comparison rows, competitor copy, Lolly comparison sentence, FAQ sentence and meta descriptions. Do not alter missing-review handling or existing Lolly tracking.
 
-- [x] Replace the final CTA with Get the Lolly for $69 and remove prohibited trial wording from all page content.
-- [x] Replace both fine-print instances with the exact supplied refund/exchange/packaging text. Preserve 30-day guarantee badges.
-- [x] Replace all six FAQ answers word for word and synchronize all six FAQ structured-data answers.
-- [x] Restore $69 with struck-through $139 in the Lolly card header only.
-- [x] Replace Still handle with Shower ready; update the five specified pills; remove unsupported handle/control language from product metadata.
-- [x] Add the three-item trust strip and change read time to four minutes.
-- [x] Shorten the two table-only names, reduce padding, wrap cells and make the complete table fit at every viewport from 600px upward. Enable inner table scrolling only below 600px.
-- [x] Verify exact FAQ and fine-print copy, all five pills, price strikethrough, excluded characters/wording, eight widths from 375px to 1440px, images, Lolly-only links, FAQ interaction and sticky CTA timing. TypeScript, production build and whitespace checks pass.
-- [x] Prepare the tested final project contents for a publishable checkpoint.
-- [ ] Add three real approved reviews. The new attachment again contains a placeholder, not the review texts. Existing three-card section remains hidden until actual reviews are supplied or selection is explicitly approved.
-- [ ] Publish the new checkpoint through the website Publish control. No deployment action is exposed in this session; verify the live domain before claiming this follow-up is live.
+- [x] Verify all six official URLs independently with one workflow agent per product. All match the intended product; no redirects reported. Magic Wand can show an anti-bot screen. Satisfyer currently lists the product as unavailable. Official prices support the user-supplied rounded values; Magic Wand lists no direct price.
+- [x] Add six small transparent outline buttons and six matching table-name links with exact labels/URLs and target blank plus nofollow/noopener/noreferrer.
+- [x] Replace all seven comparison rows with the exact supplied prices, speeds, waterproof information and verdicts. Add the exact October price-check note.
+- [x] Update competitor prices, badges and supplied good/lost copy, including Hitachi Mini title. Preserve Maude copy.
+- [x] Replace the Lolly comparison sentence and FAQ sentence. Synchronize FAQ schema. Apply the exact primary/Open Graph/Twitter descriptions.
+- [x] Preserve responsive table containment at 600px upward; use inner horizontal scrolling only below 600px. Rebalance columns for longer prices/specs.
+- [x] Test real popup navigation for all twelve competitor anchors. Six card buttons and six table links open their exact supplied URLs in new tabs with the requested attributes. Transparent background and outline hierarchy verified.
+- [x] Verify seven table rows, three meta descriptions, no excluded punctuation/trial wording, image loading, FAQ interaction, mobile paragraphs and original sticky Lolly CTA behavior. Responsive checks passed at 375, 599, 600, 768, 1024 and 1280px.
+- [x] Run TypeScript, production build and whitespace checks. All pass; no browser JavaScript errors.
+- [x] Prepare the final tested project contents for a publishable checkpoint.
+- [ ] Publish the new checkpoint via the website Publish control and verify the live domain. No deployment action is exposed in this session.
